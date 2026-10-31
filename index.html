@@ -253,7 +253,34 @@ button{font:inherit;cursor:pointer;color:inherit}
 .node .nm{font-family:var(--f-pixel);font-size:9px;line-height:1.5}
 .node .yr{font-size:14px;color:var(--gold)}
 .node .crown{position:absolute;top:-16px;font-family:var(--f-pixel);font-size:8px;background:var(--coral);color:var(--plum);padding:4px 6px;z-index:1}
-.level{margin-top:22px;padding:26px;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,380px);gap:28px}
+.level{margin-top:22px;padding:26px;display:flex;flex-direction:column;gap:26px}
+@media (min-width:901px){.level .loot{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:28px;row-gap:12px}}
+.quests{border-top:3px dashed #F4F4F633;padding-top:20px}
+.qlabel{font-family:var(--f-pixel);font-size:9px;letter-spacing:.06em;color:var(--champagne);margin-bottom:14px;line-height:1.6}
+.qgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(170px,220px));gap:14px}
+.qt{position:relative;display:flex;flex-direction:column;gap:8px;padding:8px;background:#00000040;border:3px solid #F4F4F633;border-radius:6px;cursor:pointer;text-align:left;font:inherit;transition:transform .12s,border-color .12s}
+.qt:hover{border-color:var(--coral);transform:translateY(-3px)}
+.qt[aria-expanded="true"]{border-color:var(--yellow);transform:translateY(-3px)}
+.qimg{position:relative;display:block;aspect-ratio:4/3;border-radius:3px;overflow:hidden;background:#111}
+.qimg img{width:100%;height:100%;object-fit:cover}
+.qimg .play{position:absolute;inset:0;display:grid;place-items:center}
+.qimg .play i{width:34px;height:34px;background:var(--coral);clip-path:polygon(30% 20%,30% 80%,80% 50%);filter:drop-shadow(0 2px 6px #0008)}
+.qimg.blk{display:grid;place-items:center;background:var(--yellow);box-shadow:inset -6px -6px 0 #C9A800,inset 6px 6px 0 #FFF6A8}
+.qimg.blk b{font-family:var(--f-pixel);font-size:34px;color:#0B0B0D;text-shadow:3px 3px 0 #C9A80099}
+.qn{font-family:var(--f-pixel);font-size:8px;line-height:1.6;color:var(--ink);padding-right:28px}
+.qb{position:absolute;right:8px;bottom:8px;width:22px;height:22px;display:grid;place-items:center;font-family:var(--f-pixel);font-size:10px;background:var(--yellow);color:#0B0B0D;box-shadow:inset -2px -2px 0 #C9A800}
+.qt[aria-expanded="true"] .qb{animation:bump .3s steps(3)}
+@keyframes bump{0%{transform:translateY(0)}50%{transform:translateY(-8px)}100%{transform:translateY(0)}}
+.qbox{position:relative;margin-top:16px;padding:18px 20px 22px;background:#0B0B0D;border:4px solid var(--ink);box-shadow:0 0 0 4px #0B0B0D,6px 6px 0 4px var(--coral);border-radius:4px;animation:pop .18s steps(3)}
+@keyframes pop{from{transform:scale(.92);opacity:0}to{transform:none;opacity:1}}
+.qbox .qh{display:block;font-family:var(--f-pixel);font-size:9px;color:var(--coral);line-height:1.6;margin-bottom:10px}
+.qbox p{font-size:16.5px;line-height:1.5;color:#F4F4F6e6;min-height:3em}
+.qbox .go{display:inline-block;margin-top:14px;font-family:var(--f-pixel);font-size:9px;color:#0B0B0D;background:var(--champagne);padding:8px 10px;text-decoration:none}
+.qbox .go:hover{background:var(--yellow)}
+.qbox .nxt{position:absolute;right:14px;bottom:10px;font-family:var(--f-pixel);font-size:10px;color:var(--yellow);animation:blink 1s steps(2) infinite}
+@keyframes blink{50%{opacity:0}}
+.qbox .qx{position:absolute;top:6px;right:10px;border:0;background:none;color:var(--champagne);font-size:22px;line-height:1;cursor:pointer}
+@media (max-width:600px){.qgrid{grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}.qt{padding:5px;gap:6px}.qn{font-size:6.5px;padding-right:0}.qb{width:18px;height:18px;font-size:8px;right:4px;top:4px;bottom:auto}.qimg.blk b{font-size:22px}.qbox{box-shadow:0 0 0 3px #0B0B0D,4px 4px 0 3px var(--coral);padding:16px 16px 22px}.qbox p{font-size:15.5px}.qimg .play i{width:24px;height:24px}.level{padding:20px}}
 .level > *{min-width:0}
 .level h3{font-family:var(--f-pixel);font-size:18px;line-height:1.4}
 .level .role{font-size:16px;color:var(--coral);margin-top:6px}
@@ -932,34 +959,54 @@ a.trophy:hover{transform:translateY(-4px);border-color:var(--yellow)}
   function animateStats(){ statsEl.querySelectorAll('i').forEach(i => { i.style.width = '0'; requestAnimationFrame(() => requestAnimationFrame(() => i.style.width = i.dataset.w + '%')); }); }
   document.getElementById('tapStart').addEventListener('click', () => document.getElementById('g-start').scrollIntoView({behavior: reduce ? 'auto' : 'smooth'}));
 
-  const vid = (href, img, alt, head, text) => `<a class="media" href="${href}" target="_blank" rel="noopener"><span class="qh">${head}</span><span class="thumb"><img src="${img}" alt="${alt}" loading="lazy"><span class="play"><i></i></span></span><p>${text}</p><span class="go">▶ WATCH ON YOUTUBE</span></a>`;
   const levels = [
     {id:"google", nm:"Google", yr:"2011–2013", role:"Level 1 · Tutorial", loot:[
       ["20+","marketing experiments to find product-market fit for new social products"],["Campus","campaigns that brought Google for Education to Rice"]],
-      side:`<div class="media"><span class="qh">LEVEL TIP</span><p>Every save file has to start somewhere. Mine started with me handing out Google swag on a college campus.</p></div>`},
+      quests:[{h:"LEVEL TIP",t:"Every save file has to start somewhere. Mine started with me handing out Google swag on a college campus."}]},
     {id:"niantic", nm:"Pokémon GO", yr:"2018–2021", boss:true, role:"Boss level · Niantic", loot:[
       ["1B+","downloads while I led the global marketing team"],["2019","the game's highest revenue year, during my time there"],["GO Fest 2020","a commercial directed by Rian Johnson"],["Anime","collaborations with The Pokémon Company"],["App Trend of the Year","in Apple's App Store Best of 2020"],["Team GO Rocket","took over New York City in 2019"],["50-foot","egg in Chicago's Maggie Daley Park for GO Fest 2021"]],
-      side: `<a class="media" href="https://www.marketingdive.com/news/pokemon-go-stages-ooh-hack-campaign-in-new-york/559687/" target="_blank" rel="noopener"><span class="qh">SIDE QUEST · TEAM GO ROCKET TAKES NYC</span><img src="img/rocket-nyc2.jpg" alt="Two Team GO Rocket grunts in black uniforms jumping out of a New York taxi with paint buckets" loading="lazy" style="width:100%;aspect-ratio:1/1;object-fit:cover;border-radius:4px"><p>In July 2019 Team GO Rocket "hacked" our own ads around New York. Pikachu billboards went up across Manhattan, then the digital screens "crashed" and Jessie, James and Meowth took over. Grunts showed up in person to photobomb people. In the game they took over PokéStops across the city until trainers fought them off. This is still one of the launches I'm proudest of.</p><span class="go">▶ READ IT ON MARKETING DIVE</span></a>`
-          + vid("https://www.youtube.com/watch?v=zq4L_t2u5R4","img/rj-ad.jpg","Still from the Pokémon GO Fest 2020 commercial","SIDE QUEST · THE RIAN JOHNSON AD","When GO Fest 2020 went virtual during COVID, Rian Johnson (Knives Out) directed this commercial remotely with crews in New Zealand and LA.")
-          + vid("https://www.youtube.com/watch?v=V0sI3fOTuUc","img/egg-raid.jpg","Together We Raid: Legendary Night title card","SIDE QUEST · THE EGG","In July 2021 a 50-foot egg showed up in Chicago's Maggie Daley Park for GO Fest. It worked as a live in-game gym, with Legendary raids projected onto the shell while players around the world joined in remotely.")},
+      quests:[
+        {h:"TEAM GO ROCKET TAKES NYC",img:"img/rocket-nyc2.jpg",alt:"Two Team GO Rocket grunts in black uniforms jumping out of a New York taxi with paint buckets",href:"https://www.marketingdive.com/news/pokemon-go-stages-ooh-hack-campaign-in-new-york/559687/",go:"READ IT ON MARKETING DIVE",t:`In July 2019 Team GO Rocket "hacked" our own ads around New York. Pikachu billboards went up across Manhattan, then the digital screens "crashed" and Jessie, James and Meowth took over. Grunts showed up in person to photobomb people. In the game they took over PokéStops across the city until trainers fought them off. This is still one of the launches I'm proudest of.`},
+        {h:"THE RIAN JOHNSON AD",img:"img/rj-ad.jpg",alt:"Still from the Pokémon GO Fest 2020 commercial",href:"https://www.youtube.com/watch?v=zq4L_t2u5R4",go:"WATCH ON YOUTUBE",video:1,t:"When GO Fest 2020 went virtual during COVID, Rian Johnson (Knives Out) directed this commercial remotely with crews in New Zealand and LA."},
+        {h:"THE EGG",img:"img/egg-raid.jpg",alt:"Together We Raid: Legendary Night title card",href:"https://www.youtube.com/watch?v=V0sI3fOTuUc",go:"WATCH ON YOUTUBE",video:1,t:"In July 2021 a 50-foot egg showed up in Chicago's Maggie Daley Park for GO Fest. It worked as a live in-game gym, with Legendary raids projected onto the shell while players around the world joined in remotely."}]},
     {id:"neeva", nm:"Neeva", yr:"2021–2023", role:"Level 3 · Paid Growth Advisor, then Head of Marketing", loot:[
       ["NeevaAI","one of the first consumer generative AI search products, with in-answer citations"],["Press","TechCrunch, Forbes, CNBC, Bloomberg, This Week in Startups and All-In"],["Stunts","including a truck parked outside Google's New York office"]],
       rare:"RARE DROP: ACQUIRED BY SNOWFLAKE",
-      side:`<a class="media tweet" href="https://x.com/Neeva/status/1636754886829432835" target="_blank" rel="noopener"><span class="qh">SIDE QUEST · THE TRUCK</span><img src="img/truck-tweet.jpg" alt="Neeva's post on X showing a truck outside Google's New York office that says This truck is searching for Google's AI search engine" loading="lazy"><p>In March 2023 Neeva parked a truck outside Google's New York office that was "searching for" Google's AI search engine. Neeva announced it in full Gossip Girl voice. XOXO.</p><span class="go">▶ SEE THE POST ON X</span></a>`},
+      quests:[{h:"THE TRUCK",img:"img/truck-tweet.jpg",alt:"Neeva's post on X showing a truck outside Google's New York office that says This truck is searching for Google's AI search engine",pos:"50% 30%",href:"https://x.com/Neeva/status/1636754886829432835",go:"SEE THE POST ON X",t:"In March 2023 Neeva parked a truck outside Google's New York office that was \"searching for\" Google's AI search engine. Neeva announced it in full Gossip Girl voice. XOXO."}]},
     {id:"fractional", nm:"Fractional era", yr:"Fractional Contracted Leader", role:"Level 4 · Speedrun", loot:[
       ["#1","Product of the Week on Product Hunt for a venture-backed consumer startup I launched"],["10,000","users through community-led growth"],["DAOs","and crypto communities I helped grow and raise money"],["On-chain","creator protocol where I built the product roadmap and competitive analysis"]],
-      side:`<div class="media"><span class="qh">LEVEL TIP</span><p>I led marketing and the launch for the consumer startup. Honestly the community did most of the heavy lifting.</p></div><div class="media"><span class="qh">SIDE QUEST · THE NFT ERA</span><p>Around 2021 I helped crypto startups and DAOs grow their communities. Flipping NFTs and community coins was making people a LOT of money at the time. And then it lost them a lot of money. I think I came out of it knowing a ton about community-led growth and owning very few JPEGs.</p></div>`},
+      quests:[{h:"LEVEL TIP",t:"I led marketing and the launch for the consumer startup. Honestly the community did most of the heavy lifting."},{h:"THE NFT ERA",icon:"$",t:"Around 2021 I helped crypto startups and DAOs grow their communities. Flipping NFTs and community coins was making people a LOT of money at the time. And then it lost them a lot of money. I think I came out of it knowing a ton about community-led growth and owning very few JPEGs."}]},
     {id:"kaya", nm:"Edyn → Kaya", yr:"Road to Paris", role:"Level 5 · Manager and agent for a Team USA Olympian", loot:[
       ["200K+","Instagram followers today, with me as his manager and agent"],["60+","media outlets including ESPN, The Wall Street Journal, TIME, NBC and Us Weekly"],["12+","brand partners and six figures in partnership value"],["1","electrolyte elixir we made and handed out to Team USA athletes in the Olympic Village"],["1","cease and desist, which is how Edyn became Kaya"],["Club Kaya","the wellness community that runs seasonal challenges"]],
-      side:`<a class="media" href="#bonus"><span class="qh">OLYMPIC JOURNEY UNLOCKED</span><img src="img/olympics-2024.jpg" alt="Veronica and her brother Mitchell at the Louvre during the Paris 2024 Olympics" loading="lazy" style="width:100%;aspect-ratio:4/3;object-fit:cover;object-position:50% 60%;border-radius:4px"><p>This level is about my brother Mitchell's road to the Olympics. The full story is right below the map.</p><span class="go">▼ PLAY THE OLYMPIC JOURNEY</span></a>`}
+      quests:[{h:"OLYMPIC JOURNEY UNLOCKED",img:"img/olympics-2024.jpg",alt:"Veronica and her brother Mitchell at the Louvre during the Paris 2024 Olympics",pos:"50% 60%",href:"#bonus",go:"▼ PLAY THE OLYMPIC JOURNEY",t:"This level is about my brother Mitchell's road to the Olympics. The full story is right below the map."}]}
   ];
   const nodesEl = document.getElementById('nodes'), levelEl = document.getElementById('level');
   nodesEl.innerHTML = levels.map(l => `<button class="node${l.boss?' boss':''}" type="button" role="tab" data-id="${l.id}" aria-controls="level">${l.boss?'<span class="crown">BOSS</span>':''}<span class="badge"><img src="img/px-${l.id}.png" alt="" width="64" height="64"></span><span class="nm">${l.nm.toUpperCase()}</span><span class="yr">${l.yr}</span></button>`).join('');
+  let typer;
   function openLevel(id){
     const l = levels.find(x => x.id === id);
     nodesEl.querySelectorAll('.node').forEach(n => n.setAttribute('aria-selected', n.dataset.id === id));
-    levelEl.innerHTML = `<div><h3>${l.nm.toUpperCase()}</h3><div class="role">${l.role} · ${l.yr}</div><ul class="loot">${l.loot.map(([a,b]) => `<li><span><b>${a}</b> ${b}</span></li>`).join('')}</ul>${l.rare?`<span class="rare">${l.rare}</span>`:''}</div><div class="side">${l.side}</div>`;
+    const tiles = l.quests.map((q,i) => `<button class="qt" type="button" data-q="${i}" aria-expanded="false" aria-controls="qbox"><span class="qimg${q.img?'':' blk'}">${q.img?`<img src="${q.img}" alt="${q.alt}" loading="lazy"${q.pos?` style="object-position:${q.pos}"`:''}>${q.video?'<span class="play"><i></i></span>':''}`:`<b>${q.icon||'?'}</b>`}</span><span class="qn">${q.h}</span><span class="qb" aria-hidden="true">?</span></button>`).join('');
+    levelEl.innerHTML = `<div><h3>${l.nm.toUpperCase()}</h3><div class="role">${l.role} · ${l.yr}</div><ul class="loot">${l.loot.map(([a,b]) => `<li><span><b>${a}</b> ${b}</span></li>`).join('')}</ul>${l.rare?`<span class="rare">${l.rare}</span>`:''}</div><div class="quests"><div class="qlabel">${l.quests.length>1?'SIDE QUESTS':'SIDE QUEST'} · TAP A ? BLOCK TO OPEN</div><div class="qgrid">${tiles}</div><div class="qbox" id="qbox" hidden aria-live="polite"></div></div>`;
+    levelEl._l = l;
   }
+  function openQuest(btn){
+    const l = levelEl._l, box = levelEl.querySelector('.qbox'), q = l.quests[+btn.dataset.q];
+    const was = btn.getAttribute('aria-expanded') === 'true';
+    levelEl.querySelectorAll('.qt').forEach(b => { b.setAttribute('aria-expanded','false'); b.querySelector('.qb').textContent = '?'; });
+    clearInterval(typer);
+    if(was){ box.hidden = true; return; }
+    btn.setAttribute('aria-expanded','true'); btn.querySelector('.qb').textContent = '!';
+    const ext = q.href && !q.href.startsWith('#');
+    box.innerHTML = `<button class="qx" type="button" aria-label="Close">×</button><span class="qh">${q.h==='LEVEL TIP'||q.h.indexOf('UNLOCKED')>=0?'':'SIDE QUEST · '}${q.h}</span><p></p>${q.href?`<a class="go" href="${q.href}"${ext?' target="_blank" rel="noopener"':''}>${q.go.startsWith('▼')?q.go:'▶ '+q.go}</a>`:''}<span class="nxt" aria-hidden="true">▼</span>`;
+    box.hidden = false; box.style.animation = 'none'; box.offsetHeight; box.style.animation = '';
+    const p = box.querySelector('p');
+    if(reduce){ p.textContent = q.t; }
+    else { let i = 0; p.textContent = ''; typer = setInterval(() => { i += 2; p.textContent = q.t.slice(0,i); if(i >= q.t.length) clearInterval(typer); }, 14); box.onclick = e => { if(!e.target.closest('a,.qx')){ clearInterval(typer); p.textContent = q.t; } }; }
+    box.querySelector('.qx').onclick = () => openQuest(btn);
+    if(box.getBoundingClientRect().bottom > innerHeight) box.scrollIntoView({behavior: reduce?'auto':'smooth', block:'nearest'});
+  }
+  levelEl.addEventListener('click', e => { const t = e.target.closest('.qt'); if(t) openQuest(t); });
   nodesEl.addEventListener('click', e => { const n = e.target.closest('.node'); if(n) openLevel(n.dataset.id); });
   openLevel('niantic');
 
