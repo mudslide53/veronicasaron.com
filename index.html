@@ -10,6 +10,10 @@
 <meta property="og:url" content="https://veronicasaron.com/">
 <meta name="twitter:card" content="summary_large_image">
 <title>Veronica Saron</title>
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="icon" href="favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta name="theme-color" content="#0B0B0D">
 <meta name="description" content="Veronica Saron is VP of Marketing at RelationalAI. She led Pokémon GO's global marketing team at Niantic, was Head of Marketing at Neeva through its acquisition by Snowflake, and is a Forbes 30 Under 30 honoree.">
 <link rel="alternate" type="text/plain" href="llms.txt" title="Facts about Veronica Saron for AI agents">
 <script type="application/ld+json">
@@ -160,6 +164,7 @@ button{font:inherit;cursor:pointer;color:inherit}
 .k.add{background:#0E3324;color:#4BF09A}.k.imp{background:#101F4D;color:#86A8FF}.k.fix{background:#3A1430;color:#FF7DBE}
 .notes b{color:var(--ink);font-weight:600}
 .rel-split{display:grid;grid-template-columns:minmax(0,1fr) 230px;gap:28px;align-items:start}
+.fly{max-width:300px;justify-self:center}.fly svg{width:100%;height:auto;display:block}.fly .fc{font-family:var(--f-mono);font-size:15px;fill:var(--ink)}.fly .fn text{font-family:var(--f-mono);font-size:12.5px;font-weight:600;fill:#0B0B0D}.fly figcaption{font-family:var(--f-hand,'Gochi Hand');font-size:16px;text-align:center;margin-top:6px;color:inherit;opacity:.8}
 .polaroid{color:#0B0B0D;background:#fff;padding:10px 10px 12px;border-radius:6px;box-shadow:0 18px 40px -18px #0B0B0D77;transform:rotate(2deg)}
 .polaroid img{width:100%;aspect-ratio:3/4;object-fit:cover;border-radius:3px}
 .polaroid figcaption{font-family:var(--f-hand);font-size:18px;line-height:1.15;margin-top:8px;text-align:center}
@@ -273,6 +278,7 @@ button{font:inherit;cursor:pointer;color:inherit}
 @keyframes bump{0%{transform:translateY(0)}50%{transform:translateY(-8px)}100%{transform:translateY(0)}}
 .qbox{position:relative;margin-top:16px;padding:18px 20px 22px;background:#0B0B0D;border:4px solid var(--ink);box-shadow:0 0 0 4px #0B0B0D,6px 6px 0 4px var(--coral);border-radius:4px;animation:pop .18s steps(3)}
 @keyframes pop{from{transform:scale(.92);opacity:0}to{transform:none;opacity:1}}
+.qzoom{display:block;width:100%;max-width:540px;border-radius:4px;margin-bottom:14px;border:3px solid #F4F4F633}
 .qbox .qh{display:block;font-family:var(--f-pixel);font-size:9px;color:var(--coral);line-height:1.6;margin-bottom:10px}
 .qbox p{font-size:16.5px;line-height:1.5;color:#F4F4F6e6;min-height:3em}
 .qbox .go{display:inline-block;margin-top:14px;font-family:var(--f-pixel);font-size:9px;color:#0B0B0D;background:var(--champagne);padding:8px 10px;text-decoration:none}
@@ -576,13 +582,13 @@ a.trophy:hover{transform:translateY(-4px);border-color:var(--yellow)}
             <h3>RelationalAI<span>VP of Marketing</span><span class="badge">latest</span></h3>
             <ul class="notes">
               <li><span class="k add">Added</span><span>I led the launch around RelationalAI's recognition in Gartner's inaugural 2026 <b>Magic Quadrant for Decision Intelligence Platforms</b>.</span></li>
-              <li><span class="k add">Added</span><span>I led the strategy behind our <b>2026 Telecom Snowflake Product Partner of the Year</b> award and the Summit 2026 product launch, which SiliconANGLE, SD Times and BigDATAwire covered.</span></li>
+              <li><span class="k add">Added</span><span>I led the strategy behind our <b>2026 Telecom Snowflake Product Partner of the Year</b> award and the Summit 2026 product launch. SiliconANGLE, SD Times and BigDATAwire covered the launch.</span></li>
               <li><span class="k add">Added</span><span>I built a bench of <b>7 executive spokespeople</b> with placements in InfoWorld, CIO and RT Insights.</span></li>
-              <li><span class="k imp">Improved</span><span>I've run our presence at <b>Snowflake Summit</b> two years in a row, along with a co-marketing webinar series with Snowflake and an ABM program for Fortune 500 accounts in financial services and telecom.</span></li>
+              <li><span class="k imp">Improved</span><span>I've run our presence at <b>Snowflake Summit</b> two years in a row. I also ran a co-marketing webinar series with Snowflake and an ABM program for Fortune 500 accounts in financial services and telecom.</span></li>
               <li><span class="k imp">Improved</span><span>Our marketing ops now run on <b>Claude agents</b> and a shared knowledge base. I still check their work.</span></li>
             </ul>
           </div>
-          <figure class="polaroid" style="margin:0"><img src="img/summit-swing.jpg" alt="Veronica on a ski-lift swing at Snowflake Summit" width="760" height="1014" loading="lazy"><figcaption>Me at Snowflake Summit, taking a quick break on the ski lift</figcaption></figure>
+          <figure class="polaroid" style="margin:0"><img src="img/summit-swing.jpg" alt="Veronica on a ski-lift swing at Snowflake Summit" width="760" height="1014" loading="lazy"><figcaption>Me taking a quick break on the ski lift at Snowflake Summit</figcaption></figure>
         </div>
       </article>
       <article class="rel">
@@ -592,21 +598,45 @@ a.trophy:hover{transform:translateY(-4px);border-color:var(--yellow)}
           <ul class="notes">
             <li><span class="k add">Added</span><span>I built the pitch narrative and led PR for a data infrastructure startup's <b>$40M Series A</b>.</span></li>
             <li><span class="k add">Added</span><span>I advised B2B startups in generative AI, cloud and collaboration software on go-to-market, product marketing and the SEO and conversion work underneath it.</span></li>
-            <li><span class="k add">Added</span><span>I'm an LP at <b>MKT1 Capital</b>, a fund run by marketing leaders that backs pre-seed through Series A B2B startups.</span></li>
-            <li><span class="k add">Added</span><span>I'm a member of the <b>U.S. Olympic &amp; Paralympic Foundation NextGen Council</b>, which supports Team USA on the road to LA28.</span></li>
+            <li><span class="k add">Added</span><span>I'm an LP at <b>MKT1 Capital</b>. It's a fund run by marketing leaders that backs pre-seed through Series A B2B startups.</span></li>
+            <li><span class="k add">Added</span><span>I'm a member of the <b>U.S. Olympic &amp; Paralympic Foundation NextGen Council</b>. The council supports Team USA on the road to LA28.</span></li>
           </ul>
         </div>
       </article>
       <article class="rel">
         <div class="ver">v2021<small>Mountain View</small></div>
         <div>
+          <div class="rel-split">
+          <div>
           <h3>Neeva<span>enterprise side</span></h3>
           <ul class="notes">
-            <li><span class="k imp">Improved</span><span>I started in 2021 as a very hands-on <b>Paid Growth Advisor</b>, working directly with the founders on growth, positioning and launches.</span></li>
-            <li><span class="k imp">Improved</span><span>At the end of 2022 I became <b>Head of Marketing</b>, reporting to CEO Sridhar Ramaswamy, who went on to become Snowflake's CEO.</span></li>
+            <li><span class="k imp">Improved</span><span>I started in 2021 as a very hands-on <b>Paid Growth Advisor</b> and worked directly with the founders on growth, positioning and launches.</span></li>
+            <li><span class="k imp">Improved</span><span>At the end of 2022 I became <b>Head of Marketing</b> and reported to CEO Sridhar Ramaswamy. He went on to become Snowflake's CEO.</span></li>
             <li><span class="k imp">Improved</span><span>I repositioned Neeva as an AI-first company and led the team across community, social, PMM and CX.</span></li>
+            <li><span class="k add">Added</span><span>In early 2023 I helped shape the go-to-market plan for <b>Neeva for Business</b>. That plan took our search stack to enterprises, publishers and AI companies.</span></li>
+            <li><span class="k add">Added</span><span>Publishers could plug in our <b>search API</b> to power site search with cited sources. Companies could give employees <b>secure search</b> across the web and their own internal docs.</span></li>
+            <li><span class="k add">Added</span><span>AI companies could license our <b>crawl and index</b> as clean data for RAG. In a 2023 deck this sounded a little like science fiction. Now it's basically its own industry, I think.</span></li>
+            <li><span class="k imp">Improved</span><span>We tied it all into one <b>revenue flywheel</b> where consumer subscriptions, partner bundles, enterprise seats and data deals all fed search volume back into the index.</span></li>
             <li><span class="k fix">Shipped</span><span>I led marketing through Neeva's <b>acquisition by Snowflake</b> in 2023.</span></li>
           </ul>
+          </div>
+          <figure class="fly" style="margin:0">
+            <svg viewBox="0 0 300 300" role="img" aria-label="Neeva revenue flywheel: consumer app, partner channels, enterprise and data deals all feed search volume">
+              <defs><marker id="fa" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0 0L10 5L0 10z" fill="#FF2E93"/></marker></defs>
+              <circle cx="150" cy="150" r="96" fill="none" stroke="#FF2E9355" stroke-width="2" stroke-dasharray="4 6"/>
+              <path d="M196 66 A96 96 0 0 1 234 104" fill="none" stroke="#FF2E93" stroke-width="5" marker-end="url(#fa)"/>
+              <path d="M234 196 A96 96 0 0 1 196 234" fill="none" stroke="#FF2E93" stroke-width="5" marker-end="url(#fa)"/>
+              <path d="M104 234 A96 96 0 0 1 66 196" fill="none" stroke="#FF2E93" stroke-width="5" marker-end="url(#fa)"/>
+              <path d="M66 104 A96 96 0 0 1 104 66" fill="none" stroke="#FF2E93" stroke-width="5" marker-end="url(#fa)"/>
+              <text x="150" y="146" text-anchor="middle" class="fc">search</text><text x="150" y="166" text-anchor="middle" class="fc">volume</text>
+              <g class="fn"><rect x="105" y="36" width="90" height="30" rx="15" fill="#FFE135"/><text x="150" y="56" text-anchor="middle">Consumer</text></g>
+              <g class="fn"><rect x="205" y="135" width="90" height="30" rx="15" fill="#2F6BFF"/><text x="250" y="155" text-anchor="middle" fill="#fff">Partners</text></g>
+              <g class="fn"><rect x="105" y="234" width="90" height="30" rx="15" fill="#22E07A"/><text x="150" y="254" text-anchor="middle">Enterprise</text></g>
+              <g class="fn"><rect x="5" y="135" width="90" height="30" rx="15" fill="#FF7A1A"/><text x="50" y="155" text-anchor="middle">Data deals</text></g>
+            </svg>
+            <figcaption>The revenue flywheel from our 2023 enterprise plan, redrawn by me</figcaption>
+          </figure>
+          </div>
         </div>
       </article>
       <article class="rel">
@@ -614,7 +644,7 @@ a.trophy:hover{transform:translateY(-4px);border-color:var(--yellow)}
         <div>
           <h3>Niantic<span>partnerships for Pokémon GO</span></h3>
           <ul class="notes">
-            <li><span class="k add">Added</span><span>I helped launch new revenue streams for the game, including <b>B2B sponsorships</b> with enterprise and SMB partners alongside subscriptions and ticketed events.</span></li>
+            <li><span class="k add">Added</span><span>I helped launch new revenue streams for the game. Alongside subscriptions and ticketed events we sold <b>B2B sponsorships</b> to enterprise and SMB partners.</span></li>
             <li><span class="k add">Added</span><span>I ran co-marketing with <b>The Pokémon Company</b> and with platforms like Samsung, Google and Apple.</span></li>
             <li><span class="k add">Added</span><span>I built BD partnerships with fashion, CPG and telecom brands.</span></li>
           </ul>
@@ -626,7 +656,7 @@ a.trophy:hover{transform:translateY(-4px);border-color:var(--yellow)}
           <h3>Deloitte<span>strategy consulting</span></h3>
           <ul class="notes">
             <li><span class="k add">Added</span><span>I did B2B strategy and customer experience consulting for Fortune 500 clients in healthcare, hospitality and energy.</span></li>
-            <li><span class="k add">Added</span><span>I worked on go-to-market plans, business cases and event sponsorships, which is where I learned how big companies actually buy things.</span></li>
+            <li><span class="k add">Added</span><span>I worked on go-to-market plans, business cases and event sponsorships. That's where I learned how big companies actually buy things.</span></li>
           </ul>
         </div>
       </article>
@@ -639,7 +669,7 @@ a.trophy:hover{transform:translateY(-4px);border-color:var(--yellow)}
     <div class="int" role="group" aria-label="Integrations">
       <div class="int-head"><span class="cnt"><span></span>16 connected</span><span class="search">Search integrations…</span></div>
       <div class="int-grid" id="intGrid"></div>
-      <div class="int-foot"><span><i style="background:var(--ok)"></i>Connected</span><span><i style="background:var(--blue)"></i>Connected, in beta</span></div>
+      <div class="int-foot"><span><i style="background:var(--ok)"></i>Connected</span><span><i style="background:var(--blue)"></i>Connected and in beta</span></div>
     </div>
   </div>
 
@@ -685,7 +715,7 @@ a.trophy:hover{transform:translateY(-4px);border-color:var(--yellow)}
 
   <div class="wrap g-sec" id="bonus">
     <h2 class="g-h"><small>BONUS STAGE</small>Olympic Journey</h2>
-    <p class="bonus-lede">My little brother Mitchell Saron fences sabre for Team USA. In 2012 we went to the London Olympics as fans, back when making the team was still his dream. Twelve years later he competed in Paris. I ran his marketing and business the whole way there as his manager and agent.</p>
+    <p class="bonus-lede">My little brother Mitchell Saron fences sabre for Team USA. In 2012 we went to the London Olympics as fans. Back then making the team was still his dream. Twelve years later he competed in Paris. I ran his marketing and business the whole way there as his manager and agent.</p>
     <div class="then-now">
       <figure class="panel snap"><img src="img/olympics-2012.jpg" alt="Veronica and a young Mitchell outside a London 2012 Olympics venue" loading="lazy"><figcaption><b>2012 · LONDON</b><span>We were in the crowd in London when making the team was still a dream.</span></figcaption></figure>
       <div class="arrow" aria-hidden="true"><span class="yrs">12 YEARS<br>LATER</span><svg class="ar" viewBox="0 0 12 8" shape-rendering="crispEdges"><path fill="#FFE135" d="M0 3h7V0h1v1h1v1h1v1h1v1h1v1h-1v1h-1v1H9v1H8v1H7V5H0z"/><path fill="#FF2E93" d="M0 5h7v1H0z"/></svg></div>
@@ -694,24 +724,24 @@ a.trophy:hover{transform:translateY(-4px);border-color:var(--yellow)}
     <div class="panel quest">
       <div class="q-stats">
         <div><b>20K</b><span>followers I grew his accounts to while he trained</span></div>
-        <div><b>200K+</b><span>Instagram followers today, with me as his manager and agent</span></div>
+        <div><b>200K+</b><span>Instagram followers today with me as his manager and agent</span></div>
         <div><b>67K+</b><span>combined following across Instagram, TikTok and email before Paris</span></div>
         <div><b>12+</b><span>brand partners and six figures in partnership value</span></div>
       </div>
       <h3 class="q-h">QUEST LOG</h3>
       <ul class="loot">
         <li><span>I built his health and lifestyle content in the leadup to Paris 2024 while he trained.</span></li>
-        <li><span>We landed coverage in 60+ outlets, including <a class="press" href="https://www.tiktok.com/@espn/video/7372254050085129514" target="_blank" rel="noopener">ESPN</a>, <a class="press" href="https://www.wsj.com/sports/olympics/olympics-fencing-star-wars-princess-bride-15a27542" target="_blank" rel="noopener">The Wall Street Journal</a>, <a class="press" href="https://time.com/6997596/what-olympic-athletes-eat-for-energy/" target="_blank" rel="noopener">TIME</a>, <a class="press" href="https://www.nbcolympics.com/news/us-fencers-having-blast-paris-olympic-village" target="_blank" rel="noopener">NBC</a> and <a class="press" href="https://www.usmagazine.com/celebrity-news/news/mitchell-saron-usa-fencer-gives-his-followers-a-peek-behind-the-curtain-as-he-trains-for-olympics/" target="_blank" rel="noopener">Us Weekly</a>.</span></li>
+        <li><span>We landed coverage in 60+ outlets like <a class="press" href="https://www.tiktok.com/@espn/video/7372254050085129514" target="_blank" rel="noopener">ESPN</a>, <a class="press" href="https://www.wsj.com/sports/olympics/olympics-fencing-star-wars-princess-bride-15a27542" target="_blank" rel="noopener">The Wall Street Journal</a>, <a class="press" href="https://time.com/6997596/what-olympic-athletes-eat-for-energy/" target="_blank" rel="noopener">TIME</a>, <a class="press" href="https://www.nbcolympics.com/news/us-fencers-having-blast-paris-olympic-village" target="_blank" rel="noopener">NBC</a> and <a class="press" href="https://www.usmagazine.com/celebrity-news/news/mitchell-saron-usa-fencer-gives-his-followers-a-peek-behind-the-curtain-as-he-trains-for-olympics/" target="_blank" rel="noopener">Us Weekly</a>.</span></li>
         <li><span>We produced branded content for 12+ companies and brought in six figures in partnership value.</span></li>
-        <li><span>I led product development for our electrolyte elixir, which meant market research, distribution planning and a lot of tasting with a food chemist. We handed it out to Team USA athletes in the Olympic Village.</span></li>
+        <li><span>I led product development for our electrolyte elixir. That meant market research, distribution planning and a lot of tasting with a food chemist. We handed it out to Team USA athletes in the Olympic Village.</span></li>
         <li><span>I directed the team across PR, marketing, product development and legal.</span></li>
       </ul>
       <h3 class="q-h">EDYN, THEN KAYA</h3>
       <p class="edyn-lede">Mitchell and I started a wellness business and club together called Edyn. Then a food company with a very similar name sent us a cease and desist. Whoooops. So Edyn became Kaya. Club Kaya is still going. Before the rename we made our own electrolyte elixir and brought it to Paris.</p>
       <div class="medals">
-        <figure class="medal"><span class="ribbon" aria-hidden="true"></span><img src="img/edyn-samples.jpg" alt="Four Edyn Elixirs test packets from Prime Laboratories, including two mango batches" loading="lazy"><figcaption>Lab samples, mango batches included</figcaption></figure>
+        <figure class="medal"><span class="ribbon" aria-hidden="true"></span><img src="img/edyn-samples.jpg" alt="Four Edyn Elixirs test packets from Prime Laboratories, including two mango batches" loading="lazy"><figcaption>Lab samples with the mango batches</figcaption></figure>
         <figure class="medal"><span class="ribbon" aria-hidden="true"></span><img src="img/edyn-eiffel.jpg" alt="A pyramid of Edyn Elixir Ignite jars under the Eiffel Tower" loading="lazy"><figcaption>The jar pyramid at the Eiffel Tower</figcaption></figure>
-        <figure class="medal"><span class="ribbon" aria-hidden="true"></span><img src="img/edyn-paris.jpg" alt="Veronica holding a jar of Edyn Elixir Ignite in front of the Paris 2024 Grand Palais sign" loading="lazy"><figcaption>Outside the Grand Palais, where the fencing happened</figcaption></figure>
+        <figure class="medal"><span class="ribbon" aria-hidden="true"></span><img src="img/edyn-paris.jpg" alt="Veronica holding a jar of Edyn Elixir Ignite in front of the Paris 2024 Grand Palais sign" loading="lazy"><figcaption>Outside the Grand Palais where the fencing happened</figcaption></figure>
       </div>
       <h3 class="q-h">BRANDS THAT PAID OUT</h3>
       <div class="brandrow">
@@ -720,7 +750,7 @@ a.trophy:hover{transform:translateY(-4px);border-color:var(--yellow)}
       <h3 class="q-h">FOLLOW THE QUEST</h3>
       <div class="ctas mlinks">
         <a class="tap" style="animation:none;text-decoration:none" href="https://www.instagram.com/mitchellsaron/" target="_blank" rel="noopener">@MITCHELLSARON<small>200K on Instagram</small></a>
-        <a class="tap alt" style="animation:none;text-decoration:none" href="https://www.instagram.com/mitchellmucks/" target="_blank" rel="noopener">@MITCHELLMUCKS<small>his side quest account, 57K</small></a>
+        <a class="tap alt" style="animation:none;text-decoration:none" href="https://www.instagram.com/mitchellmucks/" target="_blank" rel="noopener">@MITCHELLMUCKS<small>his side quest account with 57K</small></a>
         <a class="tap yel" style="animation:none;text-decoration:none" href="https://www.youtube.com/@mitchellsaron" target="_blank" rel="noopener">YOUTUBE<small>vlogs and training</small></a>
         <a class="tap grn" style="animation:none;text-decoration:none" href="https://www.skool.com/kaya" target="_blank" rel="noopener">CLUB KAYA<small>the community</small></a>
         <a class="tap wht" style="animation:none;text-decoration:none" href="https://www.teamusa.com/profiles/mitchell-saron" target="_blank" rel="noopener">TEAM USA<small>official profile</small></a>
@@ -795,8 +825,8 @@ a.trophy:hover{transform:translateY(-4px);border-color:var(--yellow)}
       </div>
     </div>
     <div class="r-side right">
-      <div class="widget"><div class="wl">Battery</div><div class="batt"><div class="cell"><i></i></div><span style="font-weight:700">12%</span></div><p>The toddler is awake, which means Low Power Mode is basically my personality now.</p></div>
-      <div class="widget"><div class="wl">Screen Time</div><div class="wv">4h 12m</div><div class="bars" aria-hidden="true"><i style="height:40%"></i><i style="height:70%"></i><i style="height:55%"></i><i style="height:90%"></i><i style="height:35%"></i><i style="height:60%"></i><i style="height:80%"></i></div><p>It's mostly LinkedIn, which is obviously for research.</p></div>
+      <div class="widget"><div class="wl">Battery</div><div class="batt"><div class="cell"><i></i></div><span style="font-weight:700">12%</span></div><p>The toddler is awake. Low Power Mode is basically my personality now.</p></div>
+      <div class="widget"><div class="wl">Screen Time</div><div class="wv">4h 12m</div><div class="bars" aria-hidden="true"><i style="height:40%"></i><i style="height:70%"></i><i style="height:55%"></i><i style="height:90%"></i><i style="height:35%"></i><i style="height:60%"></i><i style="height:80%"></i></div><p>It's mostly LinkedIn. That's obviously for research.</p></div>
     </div>
   </div>
 </section>
@@ -968,16 +998,22 @@ a.trophy:hover{transform:translateY(-4px);border-color:var(--yellow)}
       quests:[
         {h:"TEAM GO ROCKET TAKES NYC",img:"img/rocket-nyc2.jpg",alt:"Two Team GO Rocket grunts in black uniforms jumping out of a New York taxi with paint buckets",href:"https://www.marketingdive.com/news/pokemon-go-stages-ooh-hack-campaign-in-new-york/559687/",go:"READ IT ON MARKETING DIVE",t:`In July 2019 Team GO Rocket "hacked" our own ads around New York. Pikachu billboards went up across Manhattan, then the digital screens "crashed" and Jessie, James and Meowth took over. Grunts showed up in person to photobomb people. In the game they took over PokéStops across the city until trainers fought them off. This is still one of the launches I'm proudest of.`},
         {h:"THE RIAN JOHNSON AD",img:"img/rj-ad.jpg",alt:"Still from the Pokémon GO Fest 2020 commercial",href:"https://www.youtube.com/watch?v=zq4L_t2u5R4",go:"WATCH ON YOUTUBE",video:1,t:"When GO Fest 2020 went virtual during COVID, Rian Johnson (Knives Out) directed this commercial remotely with crews in New Zealand and LA."},
-        {h:"THE EGG",img:"img/egg-raid.jpg",alt:"Together We Raid: Legendary Night title card",href:"https://www.youtube.com/watch?v=V0sI3fOTuUc",go:"WATCH ON YOUTUBE",video:1,t:"In July 2021 a 50-foot egg showed up in Chicago's Maggie Daley Park for GO Fest. It worked as a live in-game gym, with Legendary raids projected onto the shell while players around the world joined in remotely."}]},
+        {h:"THE EGG",img:"img/egg-raid.jpg",alt:"Together We Raid: Legendary Night title card",href:"https://www.youtube.com/watch?v=V0sI3fOTuUc",go:"WATCH ON YOUTUBE",video:1,t:"In July 2021 a 50-foot egg showed up in Chicago's Maggie Daley Park for GO Fest. It worked as a live in-game gym. Legendary raids were projected onto the shell while players around the world joined in remotely."}]},
     {id:"neeva", nm:"Neeva", yr:"2021–2023", role:"Level 3 · Paid Growth Advisor, then Head of Marketing", loot:[
-      ["NeevaAI","one of the first consumer generative AI search products, with in-answer citations"],["Press","TechCrunch, Forbes, CNBC, Bloomberg, This Week in Startups and All-In"],["Stunts","including a truck parked outside Google's New York office"]],
+      ["NeevaAI","one of the first consumer generative AI search products, with in-answer citations"],["Press","TechCrunch, Forbes, CNBC, Bloomberg, This Week in Startups and All-In"],["Jan 2023","AI answers with cited sources, live before Bing Chat or Bard came out"],["Stunts","including a truck parked outside Google's New York office"]],
       rare:"RARE DROP: ACQUIRED BY SNOWFLAKE",
-      quests:[{h:"THE TRUCK",img:"img/truck-tweet.jpg",alt:"Neeva's post on X showing a truck outside Google's New York office that says This truck is searching for Google's AI search engine",pos:"50% 30%",href:"https://x.com/Neeva/status/1636754886829432835",go:"SEE THE POST ON X",t:"In March 2023 Neeva parked a truck outside Google's New York office that was \"searching for\" Google's AI search engine. Neeva announced it in full Gossip Girl voice. XOXO."}]},
+      quests:[
+        {h:"NEEVAAI ANSWERS",img:"img/neeva-answer.jpg",zoom:1,alt:"A NeevaAI answer to why do cats purr with numbered citations to WebMD",pos:"0% 0%",t:"In January 2023 we shipped AI answers with cited sources to everyone searching on Neeva in the US. This was before Bing Chat or Bard came out and before ChatGPT could cite anything. At the time it was extremely cutting edge. Looking at it now it feels a bit like finding your old iPod, I think. Every answer showed its sources though. I'm still proud of that."},
+        {h:"IS BARD AVAILABLE YET?",img:"img/neeva-bard.jpg",zoom:1,alt:"The isbardavailable.com page saying Google's Bard is only available to trusted testers and offers NeevaAI instead",pos:"50% 0%",t:"In February 2023 Google promised AI search and then put it behind a waitlist. Sridhar asked the marketing team to research when Bing AI and Bard would be available to everyone. We came back with isbardavailable.com. The site answered that one question and then pointed you to NeevaAI. You could use NeevaAI right away."},
+        {h:"PRODUCT HUNT LAUNCH",img:"img/neeva-ph.jpg",zoom:1,alt:"NeevaAI's Product Hunt page showing #4 Product of the Day and more than 1,100 upvotes",pos:"0% 0%",t:"NeevaAI launched on Product Hunt and landed at #4 Product of the Day with more than 1,100 upvotes. Most of those people found us through the founders' AI threads on X."},
+        {h:"PUBLISHERS, BEWARE",img:"img/neeva-publishers.jpg",zoom:1,alt:"Sridhar Ramaswamy's post warning publishers that AI answers will cut their referral traffic",pos:"0% 0%",t:"We put our founders out front with technical takes on AI and search. In February 2023 Sridhar warned publishers that AI answers would cut their referral traffic. That thread got 176K views. Honestly it's still the debate today."},
+        {h:"THE AI SEARCH WARS",img:"img/neeva-allin.jpg",zoom:1,alt:"NeevaAI answering a question about flat panel TVs during the All-In podcast episode on the AI search wars",pos:"0% 0%",t:"That content earned us organic attention from a very tech-forward crowd. NeevaAI came up on This Week in Startups and showed up on screen in the All-In episode about the AI search wars."},
+        {h:"THE TRUCK",img:"img/truck-tweet.jpg",alt:"Neeva's post on X showing a truck outside Google's New York office that says This truck is searching for Google's AI search engine",pos:"50% 30%",href:"https://x.com/Neeva/status/1636754886829432835",go:"SEE THE POST ON X",t:"In March 2023 Neeva parked a truck outside Google's New York office that was \"searching for\" Google's AI search engine. Neeva announced it in full Gossip Girl voice. XOXO."}]},
     {id:"fractional", nm:"Fractional era", yr:"Fractional Contracted Leader", role:"Level 4 · Speedrun", loot:[
-      ["#1","Product of the Week on Product Hunt for a venture-backed consumer startup I launched"],["10,000","users through community-led growth"],["DAOs","and crypto communities I helped grow and raise money"],["On-chain","creator protocol where I built the product roadmap and competitive analysis"]],
+      ["#1","Product of the Day, Week and Month on Product Hunt for a venture-backed consumer startup I launched"],["10,000","users through community-led growth"],["DAOs","and crypto communities I helped grow and raise money"],["On-chain","creator protocol where I built the product roadmap and competitive analysis"]],
       quests:[{h:"LEVEL TIP",t:"I led marketing and the launch for the consumer startup. Honestly the community did most of the heavy lifting."},{h:"THE NFT ERA",icon:"$",t:"Around 2021 I helped crypto startups and DAOs grow their communities. Flipping NFTs and community coins was making people a LOT of money at the time. And then it lost them a lot of money. I think I came out of it knowing a ton about community-led growth and owning very few JPEGs."}]},
     {id:"kaya", nm:"Edyn → Kaya", yr:"Road to Paris", role:"Level 5 · Manager and agent for a Team USA Olympian", loot:[
-      ["200K+","Instagram followers today, with me as his manager and agent"],["60+","media outlets including ESPN, The Wall Street Journal, TIME, NBC and Us Weekly"],["12+","brand partners and six figures in partnership value"],["1","electrolyte elixir we made and handed out to Team USA athletes in the Olympic Village"],["1","cease and desist, which is how Edyn became Kaya"],["Club Kaya","the wellness community that runs seasonal challenges"]],
+      ["200K+","Instagram followers today with me as his manager and agent"],["60+","media outlets including ESPN, The Wall Street Journal, TIME, NBC and Us Weekly"],["12+","brand partners and six figures in partnership value"],["1","electrolyte elixir we made and handed out to Team USA athletes in the Olympic Village"],["1","cease and desist, which is how Edyn became Kaya"],["Club Kaya","the wellness community that runs seasonal challenges"]],
       quests:[{h:"OLYMPIC JOURNEY UNLOCKED",img:"img/olympics-2024.jpg",alt:"Veronica and her brother Mitchell at the Louvre during the Paris 2024 Olympics",pos:"50% 60%",href:"#bonus",go:"▼ PLAY THE OLYMPIC JOURNEY",t:"This level is about my brother Mitchell's road to the Olympics. The full story is right below the map."}]}
   ];
   const nodesEl = document.getElementById('nodes'), levelEl = document.getElementById('level');
@@ -998,7 +1034,7 @@ a.trophy:hover{transform:translateY(-4px);border-color:var(--yellow)}
     if(was){ box.hidden = true; return; }
     btn.setAttribute('aria-expanded','true'); btn.querySelector('.qb').textContent = '!';
     const ext = q.href && !q.href.startsWith('#');
-    box.innerHTML = `<button class="qx" type="button" aria-label="Close">×</button><span class="qh">${q.h==='LEVEL TIP'||q.h.indexOf('UNLOCKED')>=0?'':'SIDE QUEST · '}${q.h}</span><p></p>${q.href?`<a class="go" href="${q.href}"${ext?' target="_blank" rel="noopener"':''}>${q.go.startsWith('▼')?q.go:'▶ '+q.go}</a>`:''}<span class="nxt" aria-hidden="true">▼</span>`;
+    box.innerHTML = `<button class="qx" type="button" aria-label="Close">×</button>${q.zoom?`<img class="qzoom" src="${q.img}" alt="${q.alt}">`:''}<span class="qh">${q.h==='LEVEL TIP'||q.h.indexOf('UNLOCKED')>=0?'':'SIDE QUEST · '}${q.h}</span><p></p>${q.href?`<a class="go" href="${q.href}"${ext?' target="_blank" rel="noopener"':''}>${q.go.startsWith('▼')?q.go:'▶ '+q.go}</a>`:''}<span class="nxt" aria-hidden="true">▼</span>`;
     box.hidden = false; box.style.animation = 'none'; box.offsetHeight; box.style.animation = '';
     const p = box.querySelector('p');
     if(reduce){ p.textContent = q.t; }
@@ -1013,9 +1049,9 @@ a.trophy:hover{transform:translateY(-4px);border-color:var(--yellow)}
   const cup = `<svg viewBox="0 0 16 16" shape-rendering="crispEdges" aria-hidden="true"><path fill="#FFE135" d="M4 2h8v1h2v3h-1v1h-1v1h-1v1H9v2h2v1H5v-1h2V9H5V8H4V7H3V6H2V3h2z"/><path fill="#F4F4F6" d="M5 3h1v4H5z"/><path fill="#E2503F" d="M4 12h8v2H4z"/><path fill="#0B0B0D" d="M3 4h1v2H3zM12 4h1v2h-1z"/></svg>`;
   const trophies = [
     ["FORBES 30 UNDER 30","Games, 2021","https://news.rice.edu/news/2020/rice-chemist-alums-named-forbes-30-under-30"],
-    ["SHORTY AWARDS GOLD","Augmented Reality, for the Pokémon GO #GOsnapshot Challenge","https://shortyawards.com/12th/gosnapshot"],
+    ["SHORTY AWARDS GOLD","Augmented Reality, 2020","https://shortyawards.com/12th/gosnapshot"],
     ["APP TREND OF THE YEAR","Pokémon GO, App Store Best of 2020","https://www.apple.com/newsroom/2020/12/apple-presents-app-store-best-of-2020-winners/"],
-    ["PRODUCT HUNT #1","Product of the Week",""]];
+    ["PRODUCT HUNT #1","Product of the Day, Week and Month for a consumer startup I launched in 2023","https://www.producthunt.com/products/keepitcloaked/awards"]];
   document.getElementById('trophies').innerHTML = trophies.map(([t,y,u]) => u ? `<a class="panel trophy" href="${u}" target="_blank" rel="noopener">${cup}<span class="t">${t}</span><span class="y">${y}</span><span class="see">SEE IT ▶</span></a>` : `<div class="panel trophy">${cup}<span class="t">${t}</span><span class="y">${y}</span></div>`).join('');
 
   /* ---------- coin burst + secret tip jar ---------- */
@@ -1098,16 +1134,16 @@ a.trophy:hover{transform:translateY(-4px);border-color:var(--yellow)}
       <div class="stat2"><div><b>18,751</b><span>impressions</span></div><div><b>~50</b><span>spam emails a day</span></div></div>
       <p class="muted">I'm all for AI saving time. But this is not the way 🙅🏽‍♀️</p>
       <a class="go" href="https://www.linkedin.com/posts/veron1ca_puts-on-my-best-forbes30u30-humblebrag-share-7498041397665718273-bTqt/" target="_blank" rel="noopener">Read the post</a>`},
-    {k:'sax', nm:'Music', bg:'#0B0B0D', fg:'#F4F4F6', body:`<h4>Saxophone</h4><p>I play the sax and I'm trying to get better at it. It's also sort of my stage-presence practice, since working remotely means I almost never perform in front of anyone.</p><p class="muted">Lately I'm playing a lot of scales.</p>`},
-    {k:'heart', nm:'Healthy Tech Mom', bg:'#E04A3A', fg:'#FFFFFF', body:`<h4>@healthytechmom</h4><p>This is where I post about health, AI and mom life, mostly the stuff that doesn't fit on LinkedIn.</p><a class="go" href="https://www.instagram.com/healthytechmom/" target="_blank" rel="noopener">Open on Instagram</a>`},
+    {k:'sax', nm:'Music', bg:'#0B0B0D', fg:'#F4F4F6', body:`<h4>Saxophone</h4><p>I play the sax and I'm trying to get better at it. It's also sort of my stage-presence practice because working remotely means I almost never perform in front of anyone.</p><p class="muted">Lately I'm playing a lot of scales.</p>`},
+    {k:'heart', nm:'Healthy Tech Mom', bg:'#E04A3A', fg:'#FFFFFF', body:`<h4>@healthytechmom</h4><p>This is where I post about health, AI and mom life. It's mostly the stuff that doesn't fit on LinkedIn.</p><a class="go" href="https://www.instagram.com/healthytechmom/" target="_blank" rel="noopener">Open on Instagram</a>`},
     {k:'note', nm:'Notes', bg:'#F4F4F6', fg:'#0B0B0D', body:`<h4>Offline Mom</h4><p>This is where I write about motherhood, screens and trying to actually be present.</p><p class="muted">The link is coming soon.</p>`},
-    {img:'img/pageant.jpg', nm:'Pageant', bg:'#FFE135', body:`<img class="hero-img" src="img/pageant.jpg" alt="Veronica in a champagne gown with long curled hair and crystal earrings" loading="lazy"><h4>The pageant era</h4><p>I'm competing for Mrs. California in the USOA system. Honestly it's my excuse to work on stage presence, which is hard to practice from a home office.</p><p>I think the walk is harder than any launch I've run.</p>`},
+    {img:'img/pageant.jpg', nm:'Pageant', bg:'#FFE135', body:`<img class="hero-img" src="img/pageant.jpg" alt="Veronica in a champagne gown with long curled hair and crystal earrings" loading="lazy"><h4>The pageant era</h4><p>I'm competing for Mrs. California in the USOA system. Honestly it's my excuse to work on stage presence. That's hard to practice from a home office.</p><p>I think the walk is harder than any launch I've run.</p>`},
     {k:'hand', nm:'Volunteer', bg:'#FFFFFF', fg:'#E04A3A', body:`<h4>Giving back</h4><p><b>Tareyton Home</b> in San Ramon: I make things with AI for the residents and help out on the back end.</p><p><b>Cupertino Symphonic Band</b>: I helped the band start using AI for fundraising. They also run a canned food drive every fall for West Valley Community Services.</p>`},
     {k:'owl', nm:'Rice', bg:'#0B0B0D', fg:'#FFE135', body:`<h4>Rice University</h4>
-      <p>I grew up in the Northeast and had a gut feeling that I had to go to Rice, in Houston, no matter what it took. I'll admit the weather was a big part of it, since I was very done with snowstorms.</p>
-      <p>Thanks to Rice's open curriculum I got to take a bit of everything. My favorite class was COMP 140 with Professor Devika Subramanian, which I loved except for the part where I had to write actual code. I also wrote for Seventeen Magazine on the side.</p>
-      <p>The residential colleges are basically Harry Potter. You get sorted into one the day you arrive and you stay there all four years, with no sororities or fraternities. I got sorted into <b>Will Rice</b> (Will Rice, Will Sweep! 🧹). That's how I met my husband.</p>
-      <div class="stat2"><div><b>2014</b><span>Economics, cum laude, merit scholar</span></div><div><b>Will Rice</b><span>my college, and where we met</span></div></div>
+      <p>I grew up in the Northeast and had a gut feeling that I had to go to Rice in Houston no matter what it took. I'll admit the weather was a big part of it because I was very done with snowstorms.</p>
+      <p>Thanks to Rice's open curriculum I got to take a bit of everything. My favorite class was COMP 140 with Professor Devika Subramanian. I loved it except for the part where I had to write actual code. I also wrote for Seventeen Magazine on the side.</p>
+      <p>The residential colleges are basically Harry Potter. You get sorted into one the day you arrive and you stay there all four years. There are no sororities or fraternities. I got sorted into <b>Will Rice</b> (Will Rice, Will Sweep! 🧹). That's how I met my husband.</p>
+      <div class="stat2"><div><b>2014</b><span>Economics cum laude and a merit scholarship</span></div><div><b>Will Rice</b><span>my college and where we met</span></div></div>
       <p>I also founded OwlSpark, Rice's startup accelerator. As of 2025, 229 Rice founders have gone through it and their companies have raised $116M. And I won the Google Global Challenge in 2012.</p>
       <p class="muted">I like the line "you can only connect the dots looking back." Rice turned out to be one of the biggest dots in my life.</p>`},
     {k:'pin', nm:'Maps', bg:'#FFFFFF', fg:'#22E07A', body:`<h4>Where I'm from</h4><div class="pins">${mapSvg}</div><p>I grew up between London, New York and New Jersey. I went to college in Houston and live in Mountain View now.</p>`},
