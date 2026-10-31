@@ -1018,7 +1018,18 @@ a.trophy:hover{transform:translateY(-4px);border-color:var(--yellow)}
   ];
   const nodesEl = document.getElementById('nodes'), levelEl = document.getElementById('level');
   nodesEl.innerHTML = levels.map(l => `<button class="node${l.boss?' boss':''}" type="button" role="tab" data-id="${l.id}" aria-controls="level">${l.boss?'<span class="crown">BOSS</span>':''}<span class="badge"><img src="img/px-${l.id}.png" alt="" width="64" height="64"></span><span class="nm">${l.nm.toUpperCase()}</span><span class="yr">${l.yr}</span></button>`).join('');
-  let typer;
+  let typer, qctx;
+  function sfx(notes, type, vol){
+    try{
+      qctx = qctx || new (window.AudioContext || window.webkitAudioContext)();
+      if(qctx.state === 'suspended') qctx.resume();
+      const t = qctx.currentTime;
+      notes.forEach(([f,d,len]) => { const o = qctx.createOscillator(), v = qctx.createGain(); o.type = type || 'square'; o.frequency.setValueAtTime(f, t + d); v.gain.setValueAtTime(vol || 0.06, t + d); v.gain.exponentialRampToValueAtTime(0.0001, t + d + (len || 0.1)); o.connect(v); v.connect(qctx.destination); o.start(t + d); o.stop(t + d + (len || 0.1) + 0.02); });
+    }catch(e){}
+  }
+  const sfxOpen = () => sfx([[523,0,.07],[659,.06,.07],[784,.12,.07],[1047,.18,.16]]);
+  const sfxClose = () => sfx([[784,0,.07],[523,.07,.12]], 'triangle', .08);
+  const sfxBlip = () => sfx([[[620,700,780][Math.floor(Math.random()*3)],0,.035]], 'square', .025);
   function openLevel(id){
     const l = levels.find(x => x.id === id);
     nodesEl.querySelectorAll('.node').forEach(n => n.setAttribute('aria-selected', n.dataset.id === id));
@@ -1031,14 +1042,15 @@ a.trophy:hover{transform:translateY(-4px);border-color:var(--yellow)}
     const was = btn.getAttribute('aria-expanded') === 'true';
     levelEl.querySelectorAll('.qt').forEach(b => { b.setAttribute('aria-expanded','false'); b.querySelector('.qb').textContent = '?'; });
     clearInterval(typer);
-    if(was){ box.hidden = true; return; }
+    if(was){ box.hidden = true; sfxClose(); return; }
+    sfxOpen();
     btn.setAttribute('aria-expanded','true'); btn.querySelector('.qb').textContent = '!';
     const ext = q.href && !q.href.startsWith('#');
     box.innerHTML = `<button class="qx" type="button" aria-label="Close">×</button>${q.zoom?`<img class="qzoom" src="${q.img}" alt="${q.alt}">`:''}<span class="qh">${q.h==='LEVEL TIP'||q.h.indexOf('UNLOCKED')>=0?'':'SIDE QUEST · '}${q.h}</span><p></p>${q.href?`<a class="go" href="${q.href}"${ext?' target="_blank" rel="noopener"':''}>${q.go.startsWith('▼')?q.go:'▶ '+q.go}</a>`:''}<span class="nxt" aria-hidden="true">▼</span>`;
     box.hidden = false; box.style.animation = 'none'; box.offsetHeight; box.style.animation = '';
     const p = box.querySelector('p');
     if(reduce){ p.textContent = q.t; }
-    else { let i = 0; p.textContent = ''; typer = setInterval(() => { i += 2; p.textContent = q.t.slice(0,i); if(i >= q.t.length) clearInterval(typer); }, 14); box.onclick = e => { if(!e.target.closest('a,.qx')){ clearInterval(typer); p.textContent = q.t; } }; }
+    else { let i = 0; p.textContent = ''; let tick = 0; typer = setInterval(() => { i += 2; p.textContent = q.t.slice(0,i); if(++tick % 3 === 0 && tick > 8 && q.t[i] && q.t[i] !== ' ') sfxBlip(); if(i >= q.t.length){ clearInterval(typer); sfx([[1319,0,.05],[1568,.05,.09]], 'square', .04); } }, 14); box.onclick = e => { if(!e.target.closest('a,.qx')){ clearInterval(typer); p.textContent = q.t; } }; }
     box.querySelector('.qx').onclick = () => openQuest(btn);
     if(box.getBoundingClientRect().bottom > innerHeight) box.scrollIntoView({behavior: reduce?'auto':'smooth', block:'nearest'});
   }
