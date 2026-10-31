@@ -976,11 +976,11 @@ a.trophy:hover{transform:translateY(-4px);border-color:var(--yellow)}
   const ico = k => IC[k] ? `<svg viewBox="0 0 24 24" aria-hidden="true"><path d="${IC[k].p}"/></svg>` : k;
   const groups = [
     ['Data + AI', [['Snowflake','snowflake'],['Claude','claude'],['NVIDIA','nvidia',1],['Gartner','G']]],
-    ['Partners', [['The Pokémon Company','P'],['Endava','E',1],['MKT1 Capital','M'],['Samsung','samsung']]],
+    ['Partners', [['The Pokémon Company','P'],['AT&T','A'],['MKT1 Capital','M'],['Samsung','samsung']]],
     ['Platforms', [['Apple','apple'],['Google','google'],['Fashion brands','F'],['CPG + telecom','C']]],
     ['Channels', [['LinkedIn','in'],['Meta ads','meta'],['Events + booths','★'],['ABM','◎']]]
   ];
-  document.getElementById('intGrid').innerHTML = groups.map(([h,items]) => `<div class="int-col"><h3>${h}</h3>${items.map(([n,k,minor]) => `<div class="app-row${minor?' minor':''}"><span class="ic">${ico(k)}</span><span class="nm">${n}</span><span class="on" aria-label="${minor?'connected, in beta':'connected'}"></span></div>`).join('')}</div>`).join('');
+  document.getElementById('intGrid').innerHTML = groups.map(([h,items]) => `<div class="int-col"><h3>${h}</h3>${items.map(([n,k,minor]) => `<div class="app-row${minor?' minor':''}"><span class="ic">${ico(k)}</span><span class="nm">${n}</span><span class="on" aria-label="${minor?'connected and in beta':'connected'}"></span></div>`).join('')}</div>`).join('');
 
   /* ---------- B2C ---------- */
   const stats = [["Launches",94],["Community",88],["Paid media",86],["Stunts",97]];
