@@ -11,14 +11,16 @@ function parse(html) {
     const src = (attrs.match(/src="([^"]+)"/) || [])[1];
     if (!alt || !src || !/ by /.test(alt)) continue;
     const [title, author] = alt.split(/ by (?=[^]*$)/);
-    books.push({ title: decode(title), author: decode(author || ''), url: 'https://www.goodreads.com' + m[1], cover: src.replace(/\._S[XY]\d+_/, '._SY300_'), at: m.index });
+    books.push({ title: decode(title), author: decode(author || ''), url: 'https://www.goodreads.com' + m[1], cover: src.replace(/\._S[XY]\d+_/, '._SY300_'), at: m.index, fav: /inlineblock/.test(attrs) });
   }
-  const cut = html.search(/is Currently Reading/i);
+  const favAt = html.search(/favorite books/i);
+  const rel = html.slice(Math.max(0, favAt)).search(/is currently reading/i);
+  const cut = rel < 0 ? -1 : Math.max(0, favAt) + rel;
   const seen = new Set();
-  const uniq = list => list.filter(b => !seen.has(b.url) && seen.add(b.url)).map(({ at, ...b }) => b);
+  const uniq = list => list.filter(b => !seen.has(b.url) && seen.add(b.url)).map(({ at, fav, ...b }) => b);
   return {
-    favorites: uniq(books.filter(b => cut < 0 || b.at < cut)).slice(0, 12),
-    reading: uniq(books.filter(b => cut >= 0 && b.at > cut)).slice(0, 6),
+    favorites: uniq(books.filter(b => b.fav)).slice(0, 12),
+    reading: uniq(books.filter(b => !b.fav && cut >= 0 && b.at > cut)).slice(0, 6),
   };
 }
 const decode = s => s.replace(/&amp;/g, '&').replace(/&#39;|&#x27;/g, "'").replace(/&quot;/g, '"').replace(/\s+/g, ' ').trim();
