@@ -1248,7 +1248,6 @@ a.trophy:hover{transform:translateY(-4px);border-color:var(--yellow)}
     milk:'<path d="M9 2h6v3l2 3v12a2 2 0 0 1-2 2H9a2 2 0 0 1-2-2V8l2-3z"/><path d="M7 12h10"/>',
     sax:'<path d="M15 3h3v3l-4 1v9a4 4 0 0 1-8 0v-2"/><circle cx="6" cy="13" r="1.5"/><path d="M14 10h-2M14 13h-2"/>',
     heart:'<path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"/><path d="M8 11h2l1-2 2 4 1-2h2"/>',
-    note:'<rect x="5" y="3" width="14" height="18" rx="2"/><path d="M9 8h6M9 12h6M9 16h3"/>',
     hand:'<path d="M12 21s-7-4-7-9a3.5 3.5 0 0 1 7-1 3.5 3.5 0 0 1 7 1c0 5-7 9-7 9z"/><path d="M9 12h6"/>',
     owl:'<circle cx="9" cy="10" r="3"/><circle cx="15" cy="10" r="3"/><path d="M5 6l2 2M19 6l-2 2M12 14l-1 2h2zM6 14c0 4 3 7 6 7s6-3 6-7"/>',
     pin:'<path d="M12 21s-6-6-6-11a6 6 0 0 1 12 0c0 5-6 11-6 11z"/><circle cx="12" cy="10" r="2"/>',
@@ -1270,7 +1269,6 @@ a.trophy:hover{transform:translateY(-4px);border-color:var(--yellow)}
       <a class="go" href="https://www.linkedin.com/posts/veron1ca_puts-on-my-best-forbes30u30-humblebrag-share-7498041397665718273-bTqt/" target="_blank" rel="noopener">Read the post</a>`},
     {k:'sax', nm:'Music', bg:'#0B0B0D', fg:'#F4F4F6', body:`<h4>Saxophone</h4><p>I play the sax and I'm trying to get better at it. It's also sort of my stage-presence practice because working remotely means I almost never perform in front of anyone.</p><p class="muted">Lately I'm playing a lot of scales.</p>`},
     {k:'heart', nm:'Healthy Tech Mom', bg:'#E04A3A', fg:'#FFFFFF', body:`<h4>@healthytechmom</h4><p>This is where I post about health, AI and mom life. It's mostly the stuff that doesn't fit on LinkedIn.</p><a class="go" href="https://www.instagram.com/healthytechmom/" target="_blank" rel="noopener">Open on Instagram</a>`},
-    {k:'note', nm:'Notes', bg:'#F4F4F6', fg:'#0B0B0D', body:`<h4>Offline Mom</h4><p>This is where I write about motherhood, screens and trying to actually be present.</p><p class="muted">The link is coming soon.</p>`},
     {img:'img/pageant.jpg', nm:'Pageant', bg:'#FFE135', body:`<img class="hero-img" src="img/pageant.jpg" alt="Veronica in a champagne gown with long curled hair and crystal earrings" loading="lazy"><h4>The pageant era</h4><p>I'm competing for Mrs. California in the USOA system. Honestly it's my excuse to work on stage presence. That's hard to practice from a home office.</p><p>I think the walk is harder than any launch I've run.</p>`},
     {k:'hand', nm:'Volunteer', bg:'#FFFFFF', fg:'#E04A3A', body:`<h4>Giving back</h4><p><b>Tareyton Home</b> in San Ramon: I make things with AI for the residents and help out on the back end.</p><p><b>Cupertino Symphonic Band</b>: I helped the band start using AI for fundraising. They also run a canned food drive every fall for West Valley Community Services.</p>`},
     {k:'owl', nm:'Rice', bg:'#0B0B0D', fg:'#FFE135', body:`<h4>Rice University</h4>
@@ -1289,7 +1287,7 @@ a.trophy:hover{transform:translateY(-4px);border-color:var(--yellow)}
   ];
   const icon = a => a.img ? `<img src="${a.img}" alt="">` : a.txt ? `<span class="txticon">${a.txt}</span>` : svg(a.k);
   const appBtn = (a,i) => `<button class="app" type="button" data-i="${i}" aria-label="Open ${a.nm}"><span class="ico" style="background:${a.bg};color:${a.fg||'#fff'}">${icon(a)}</span>${a.nm}</button>`;
-  const dockIdx = [0,11,8,12];
+  const dockIdx = [0,10,7,11];
   document.getElementById('apps').innerHTML = apps.map((a,i) => dockIdx.includes(i) ? '' : appBtn(a,i)).join('');
   document.getElementById('dock').innerHTML = dockIdx.map(i => appBtn(apps[i],i)).join('');
   const sheet = document.getElementById('sheet');

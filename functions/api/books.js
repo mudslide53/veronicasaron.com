@@ -32,7 +32,7 @@ export async function onRequestGet({ request }) {
     const r = await fetch(PROFILE, { headers: { 'user-agent': 'Mozilla/5.0 (veronicasaron.com bookshelf)', accept: 'text/html' } });
     if (!r.ok) throw new Error('goodreads ' + r.status);
     const html = await r.text();
-    if (new URL(request.url).searchParams.has('debug')) { const i = html.search(/favorite/i); return new Response(JSON.stringify({ len: html.length, title: (html.match(/<title>([^<]*)/)||[])[1], around: html.slice(Math.max(0,i-200), i+3000) }), { headers: { 'content-type': 'application/json', 'cache-control': 'no-store' } }); }
+    if (new URL(request.url).searchParams.has('debug')) { const i = html.indexOf('/book/show/'); return new Response(JSON.stringify({ len: html.length, title: (html.match(/<title>([^<]*)/)||[])[1], around: html.slice(Math.max(0,i-200), i+3000) }), { headers: { 'content-type': 'application/json', 'cache-control': 'no-store' } }); }
     const data = { source: PROFILE, fetched: new Date().toISOString(), ...parse(html) };
     if (!data.favorites.length) throw new Error('no books parsed');
     const res = new Response(JSON.stringify(data), { headers: { 'content-type': 'application/json', 'cache-control': 'public, max-age=21600' } });
