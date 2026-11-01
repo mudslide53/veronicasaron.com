@@ -490,6 +490,91 @@ a.trophy:hover{transform:translateY(-4px);border-color:var(--yellow)}
 .contact .links{display:flex;gap:16px;font-size:14px;width:100%}
 .contact .links a{color:var(--gold)}
 @media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}}
+
+/* ---------- 2007 phone ---------- */
+.phone.y07{z-index:2;--f-07:"Helvetica Neue",Helvetica,Arial,sans-serif;position:relative;width:330px;max-width:100%;aspect-ratio:61/115;height:auto;border-radius:46px;padding:86px 18px 92px;background:linear-gradient(#1b1b1e,#050506);box-shadow:0 0 0 5px #c9ccd1,0 0 0 6px #8d9198,0 0 0 9px #e9ebee,0 0 0 10px #9a9ea5,0 40px 80px -30px #000d;font-family:var(--f-07)}
+.phone.y07::before{content:"";position:absolute;inset:0;border-radius:inherit;background:linear-gradient(115deg,#ffffff18 0 38%,transparent 38.2%);pointer-events:none;z-index:9}
+.y07 .ear{position:absolute;top:44px;left:50%;transform:translateX(-50%);width:62px;height:7px;border-radius:5px;background:#26272b;box-shadow:inset 0 1px 2px #000}
+.y07 .homebtn{position:absolute;bottom:22px;left:50%;transform:translateX(-50%);width:52px;height:52px;border-radius:50%;border:0;background:radial-gradient(circle at 50% 35%,#2b2c30,#0b0b0d 70%);box-shadow:inset 0 2px 3px #000,0 1px 0 #ffffff22;display:grid;place-items:center;cursor:pointer}
+.y07 .homebtn i{width:16px;height:16px;border:2px solid #8b8d93;border-radius:4px}
+.y07 .screen{border-radius:2px;aspect-ratio:2/3;height:auto;background:radial-gradient(9px 9px at 18% 30%,#FF2E93 60%,transparent 62%),radial-gradient(12px 12px at 80% 22%,#2F6BFF 60%,transparent 62%),radial-gradient(8px 8px at 86% 58%,#FFE135 60%,transparent 62%),radial-gradient(6px 6px at 12% 64%,#22E07A 60%,transparent 62%),radial-gradient(10px 10px at 24% 84%,#FF7A1A 60%,transparent 62%),radial-gradient(120% 70% at 50% 0%,#1d3c6e 0%,#0a1428 55%,#05070d 100%);box-shadow:0 0 0 2px #000}
+.y07 .island{display:none}
+.y07 .sbar{height:20px;padding:0 6px;align-items:center;font-size:12px;font-weight:700;background:linear-gradient(#000000cc,#000000ee);color:#fff;text-shadow:none}
+.y07 .sbar #sbTime{position:absolute;left:50%;transform:translateX(-50%)}
+.y07 .car{display:flex;align-items:flex-end;gap:1px;font-weight:600;font-size:11.5px}
+.y07 .car i{display:inline-block;width:3px;background:#fff;border-radius:1px}
+.y07 .car i:nth-child(1){height:3px}.y07 .car i:nth-child(2){height:5px}.y07 .car i:nth-child(3){height:7px}.y07 .car i:nth-child(4){height:9px}.y07 .car i:nth-child(5){height:11px;margin-right:4px}
+.y07 .car b{margin-left:4px;font-size:11px;border:1px solid #fff;border-radius:2px;padding:0 2px;line-height:12px}
+.y07 .bat{width:24px;height:11px;border:1px solid #fff;border-radius:2px;position:relative;padding:1px}
+.y07 .bat::after{content:"";position:absolute;right:-3px;top:3px;width:2px;height:4px;background:#fff}
+.y07 .bat i{display:block;height:100%;width:22%;background:linear-gradient(#ff7b7b,#d40000)}
+.y07 .lock{padding:20px 0 0;display:flex;flex-direction:column;cursor:pointer}
+.y07 .ltop{width:100%;padding:10px 0 12px;background:linear-gradient(#00000099,#000000bb);border-bottom:1px solid #ffffff22;box-shadow:inset 0 1px 0 #ffffff26}
+.y07 .lclock{font-family:var(--f-07);font-weight:200;font-size:60px;letter-spacing:-1px;margin:0;line-height:1}
+.y07 .ldate{font-size:14px;font-weight:600;margin-top:4px}
+.y07 .ntfs{padding:0 12px;margin-top:16px;gap:6px}
+.y07 .ntf{display:block;background:linear-gradient(#3b3f48ee,#16181dee);color:#fff;border:1px solid #ffffff40;border-radius:9px;box-shadow:0 2px 6px #0008;padding:7px 10px;backdrop-filter:none;-webkit-backdrop-filter:none}
+.y07 .ntf b{display:block;font-size:12.5px}.y07 .ntf span{display:block;color:#d9dbe0;font-size:12px}
+.y07 .lbot{margin-top:auto;width:100%;padding:16px 18px;background:linear-gradient(#00000099,#000000cc);border-top:1px solid #ffffff22}
+.y07 .slider{--fade:1;position:relative;height:44px;border-radius:12px;background:linear-gradient(#1a1a1a,#3a3a3a);box-shadow:inset 0 2px 4px #000,0 1px 0 #ffffff30;display:flex;align-items:center}
+.y07 .knob{position:relative;z-index:2;margin-left:3px;width:58px;height:38px;border:0;border-radius:9px;background:linear-gradient(#ffffff,#d4d6da 50%,#b9bcc2 51%,#e9eaed);box-shadow:0 1px 2px #0009;display:grid;place-items:center;cursor:grab;transition:transform .3s;touch-action:none}
+.y07 .knob svg{width:24px;height:24px;fill:#7b7f87}
+.y07 .stext{position:absolute;left:66px;right:0;text-align:center;font-size:19px;font-weight:400;opacity:var(--fade);color:transparent;background:linear-gradient(90deg,#666 0%,#666 40%,#fff 50%,#666 60%,#666 100%);background-size:200% 100%;-webkit-background-clip:text;background-clip:text;animation:glint 2.4s linear infinite}
+@keyframes glint{from{background-position:100% 0}to{background-position:-100% 0}}
+.y07 .home{padding:30px 10px 0}
+.y07 .apps{grid-template-columns:repeat(4,1fr);gap:18px 6px;margin-top:0}
+.y07 .app{font-family:var(--f-07);font-size:10.5px;font-weight:700;text-shadow:0 1px 2px #000,0 0 4px #000;gap:4px}
+.y07 .app .ico{position:relative;width:54px;height:54px;border-radius:11px;box-shadow:0 2px 4px #000a;background-image:linear-gradient(#ffffff40,#00000033) !important}
+.y07 .app .ico::after{content:"";position:absolute;left:-10%;right:-10%;top:-60%;height:105%;border-radius:0 0 50% 50% / 0 0 32% 32%;background:linear-gradient(#ffffffb0,#ffffff22);pointer-events:none}
+.y07 .app .ico svg{width:30px;height:30px;filter:drop-shadow(0 -1px 0 #0005)}
+.y07 .pdots{margin-top:auto;display:flex;justify-content:center;gap:7px;padding:8px 0}
+.y07 .pdots i{width:6px;height:6px;border-radius:50%;background:#ffffff55}.y07 .pdots i.on{background:#fff}
+.y07 .dock{margin:0 -10px;border-radius:0;padding:10px 10px 6px;background:linear-gradient(#ffffff44,#ffffff22 50%,#ffffff10 51%,#ffffff26);border-top:1px solid #ffffff66;box-shadow:inset 0 1px 0 #ffffff33;backdrop-filter:none;-webkit-backdrop-filter:none;gap:6px}
+.y07 .dock .app{font-size:10.5px}
+.y07 .dock .ico{-webkit-box-reflect:below 1px linear-gradient(transparent 62%,#ffffff40)}
+.y07 .sheet{background:repeating-linear-gradient(90deg,#c5ccd4 0 5px,#cbd2d9 5px 9px);color:#0B0B0D;font-family:var(--f-07)}
+.y07 .sheet-head{position:relative;padding:20px 8px 0;height:64px;background:linear-gradient(#b0bccd,#6d84a2 50%,#5f7798 51%,#6d84a2);border-bottom:1px solid #2d3642;justify-content:center}
+.y07 .sheet-head h3{flex:none;color:#fff;font-size:18px;font-weight:700;text-shadow:0 -1px 0 #0006;max-width:60%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.y07 .sheet-head .ico{position:absolute;right:8px;top:26px;width:30px;height:30px;border-radius:7px;box-shadow:0 1px 2px #0006}
+.y07 .back{position:absolute;left:8px;top:28px;height:28px;padding:0 10px 0 16px;border-radius:5px;background:linear-gradient(#8ea0bc,#4a6996 50%,#3d5d8b 51%,#4a6996);border:1px solid #2f4469;color:#fff;font-size:12px;font-weight:700;text-shadow:0 -1px 0 #0006;clip-path:polygon(12px 0,100% 0,100% 100%,12px 100%,0 50%)}
+.y07 .sheet-body{gap:12px;padding:12px;font-size:14px}
+.y07 .sheet-body > p,.y07 .sheet-body > h4{background:#fff;border:1px solid #a9b1bb;border-radius:9px;padding:10px 12px;margin:0}
+.y07 .sheet-body > h4{font-family:var(--f-07);font-weight:700;font-size:20px;line-height:1.15;background:none;border:0;padding:4px 2px 0;color:#4c566c;text-shadow:0 1px 0 #ffffffaa}
+.y07 .sheet-body > p.muted{background:none;border:0;padding:0 4px}
+.y07 .sheet-body a.go{background:linear-gradient(#8ea0bc,#4a6996 50%,#3d5d8b 51%,#4a6996);border:1px solid #2f4469;border-radius:9px;text-shadow:0 -1px 0 #0006;font-family:var(--f-07)}
+.y07 .sheet-body .hero-img,.y07 .ph > *,.y07 .pins svg{border-radius:9px}
+.y07 .bubble{background:linear-gradient(#f3f3f3,#d9d9d9);border:1px solid #aaa}.y07 .bubble.me{background:linear-gradient(#b8e994,#7fcf4d);border-color:#5c9e33;color:#0B0B0D}
+@media (max-width:420px){.phone.y07{width:300px;padding:76px 15px 80px}.y07 .homebtn{width:44px;height:44px;bottom:18px}.y07 .ear{top:38px}.y07 .app .ico{width:48px;height:48px}.y07 .apps{gap:14px 4px}}
+
+.app-row button.on{border:0;padding:0;cursor:pointer;transition:background .2s}
+.app-row button.on::after{transition:right .2s}
+.app-row.off button.on{background:#3A3A44}.app-row.off button.on::after{right:13px}
+.app-row.off .nm,.app-row.off .ic{opacity:.45}
+.int-head .health{font-family:var(--f-mono);font-size:12px;color:var(--ink-2)}.int-head .health b{color:var(--ok)}
+.int-head .health.warn b{color:var(--yellow)}.int-head .health.bad b{color:#FF4D4D}
+.int-head .cnt.warn span{background:var(--yellow);box-shadow:0 0 0 3px #FFE1352a}
+.dot-ok.warn{background:var(--yellow);box-shadow:0 0 0 4px #FFE13522}.dot-ok.bad{background:#FF4D4D;box-shadow:0 0 0 4px #FF4D4D22}
+.inc-stack{position:fixed;right:16px;bottom:16px;z-index:60;display:flex;flex-direction:column;gap:8px;width:min(340px,calc(100vw - 32px));pointer-events:none}
+.inc{pointer-events:auto;background:#141418;color:#F4F4F6;border:1px solid #2A2A31;border-left:4px solid var(--yellow);border-radius:10px;padding:10px 14px;font-size:13.5px;line-height:1.4;box-shadow:0 18px 40px -16px #000c;animation:incIn .25s ease-out}
+.inc.ok{border-left-color:var(--ok)}.inc.down{border-left-color:#FF4D4D}
+.inc-top{display:flex;justify-content:space-between;font-family:var(--f-mono);font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;color:#A6A6B3;margin-bottom:4px}
+.inc .inc-st{color:var(--yellow)}.inc.ok .inc-st{color:var(--ok)}.inc.down .inc-st{color:#FF4D4D}
+.inc b{display:block;font-size:14px}.inc p{color:#C9C9D2;margin-top:2px}
+.inc.out{opacity:0;transform:translateY(8px);transition:.35s}
+@keyframes incIn{from{opacity:0;transform:translateY(10px)}}
+
+.bk-sec{font-weight:700;font-size:12px;text-transform:uppercase;letter-spacing:.06em;color:#4c566c;text-shadow:0 1px 0 #fff9;margin-top:4px}
+.bk-row,.bk-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+.bk{display:block;aspect-ratio:2/3;border-radius:3px;overflow:hidden;background:#ddd;box-shadow:0 2px 4px #0005,inset 0 0 0 1px #0002}
+.bk img{width:100%;height:100%;object-fit:cover}
+.li-head{display:flex;gap:10px;align-items:center;background:#fff;border:1px solid #a9b1bb;border-radius:9px;padding:10px}
+.li-head img{width:48px;height:48px;border-radius:6px;object-fit:cover;object-position:50% 20%}
+.li-head b{display:block;font-size:15px}.li-head span{font-size:12px;color:#55555F}
+.li-follow{display:block;text-align:center;font-weight:700;color:#fff;text-decoration:none;padding:10px;border-radius:9px;background:linear-gradient(#4f9be6,#0A66C2 50%,#085aab 51%,#0A66C2);border:1px solid #064a8c;text-shadow:0 -1px 0 #0005;font-size:15px}
+.li-feed{display:flex;flex-direction:column;gap:8px}
+.li-post{display:block;background:#fff;border:1px solid #a9b1bb;border-radius:9px;padding:10px 12px;color:inherit;text-decoration:none;font-size:13px;line-height:1.4}
+.li-post .li-date{font-size:11px;color:#6d84a2;font-weight:700}.li-post p{margin:3px 0 4px}.li-post .li-more{font-size:12px;color:#0A66C2;font-weight:700}
+.y07 .app .txticon{font-family:var(--f-07);font-size:20px;font-weight:700;letter-spacing:-.02em}
 </style>
 </head>
 <body>
@@ -667,13 +752,13 @@ a.trophy:hover{transform:translateY(-4px);border-color:var(--yellow)}
     <span class="eyebrow">Integrations</span>
     <h2>Plays nicely with</h2>
     <div class="int" role="group" aria-label="Integrations">
-      <div class="int-head"><span class="cnt"><span></span>16 connected</span><span class="search">Search integrations…</span></div>
+      <div class="int-head"><span class="cnt" id="intCnt"><span></span>16 connected</span><span class="health" id="intHealth">Health score <b>100</b></span><span class="search">Search integrations…</span></div>
       <div class="int-grid" id="intGrid"></div>
       <div class="int-foot"><span><i style="background:var(--ok)"></i>Connected</span><span><i style="background:var(--blue)"></i>Connected and in beta</span></div>
     </div>
   </div>
 
-  <div class="status"><div class="wrap"><span><span class="dot-ok"></span>All systems operational</span><span>Uptime: since 2011</span><span>Region: us-west (Mountain View)</span></div></div>
+  <div class="status"><div class="wrap"><span id="sysStatus"><span class="dot-ok"></span>All systems operational</span><span>Uptime: since 2011</span><span>Region: us-west (Mountain View)</span></div></div>
 </section>
 
 <!-- =============== FOR PLAYERS =============== -->
@@ -796,33 +881,33 @@ a.trophy:hover{transform:translateY(-4px);border-color:var(--yellow)}
   <div class="wrap r-grid">
     <div class="r-side">
       <h2>The <i>off-hours</i> build.</h2>
-      <p>I'm a mom, a sax player, a Mrs. California contestant and a Rice Owl. Tap the phone to unlock it and poke around.</p>
+      <p>I'm a mom, a sax player, a Mrs. California contestant and a Rice Owl. Slide to unlock it and poke around. It's set to 2007 on purpose.</p>
       <p class="hand">↓ the pageant app has the good photo</p>
     </div>
-    <div class="phone">
+    <div class="phone y07">
+      <span class="ear" aria-hidden="true"></span>
       <div class="screen" id="screen">
-        <div class="island"></div>
-        <div class="sbar"><span id="sbTime">9:41</span><span>5G ▮▮▮ 12%</span></div>
-        <button class="lock" id="lock" type="button" aria-label="Unlock the phone">
-          <div class="ldate" id="lDate">Thursday, October 29</div>
-          <div class="lclock" id="lClock">9:41</div>
+        <div class="sbar"><span class="car"><i></i><i></i><i></i><i></i><i></i> Saron <b>E</b></span><span id="sbTime">9:41</span><span class="bat"><i></i></span></div>
+        <div class="lock" id="lock">
+          <div class="ltop"><div class="lclock" id="lClock">9:41</div><div class="ldate" id="lDate">Thursday, October 29</div></div>
           <div class="ntfs">
-            <div class="ntf"><span class="ic" style="background:#FFE1DB">🍼</span><b>Human Milk Operations</b><time>now</time><span>50 new AI-personalized cold emails</span></div>
-            <div class="ntf"><span class="ic" style="background:#F4F4F6">🎷</span><b>Saxophone</b><time>9m</time><span>Practice in 10 min</span></div>
-            <div class="ntf"><span class="ic" style="background:#F6E7BF">📈</span><b>Toddler OKRs</b><time>1h</time><span>The nap KR is at 40% and we're behind plan.</span></div>
+            <div class="ntf"><b>Human Milk Operations</b><span>50 new AI-personalized cold emails</span></div>
+            <div class="ntf"><b>Saxophone</b><span>Practice in 10 min</span></div>
+            <div class="ntf"><b>Toddler OKRs</b><span>The nap KR is at 40% and we're behind plan.</span></div>
           </div>
-          <span class="swipe">Tap to unlock</span>
-        </button>
+          <div class="lbot"><div class="slider" id="slider"><button class="knob" id="knob" type="button" aria-label="Slide to unlock"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9h9V4l8 8-8 8v-5H4z"/></svg></button><span class="stext">slide to unlock</span></div></div>
+        </div>
         <div class="home" id="home">
-          <div class="hwidget"><div><div class="t" id="hClock">9:41</div><div style="font-size:12px;color:#55555F">Mountain View</div></div><div class="s">Battery 12%<br>Toddler awake</div></div>
           <div class="apps" id="apps"></div>
+          <div class="pdots" aria-hidden="true"><i class="on"></i><i></i></div>
           <div class="dock" id="dock"></div>
         </div>
         <div class="sheet" id="sheet" role="dialog" aria-modal="false" aria-labelledby="sheetTitle">
-          <div class="sheet-head"><span class="ico" id="sheetIco"></span><h3 id="sheetTitle">App</h3><button class="back" type="button" id="sheetClose">Home</button></div>
+          <div class="sheet-head"><button class="back" type="button" id="sheetClose">Home</button><h3 id="sheetTitle">App</h3><span class="ico" id="sheetIco"></span></div>
           <div class="sheet-body" id="sheetBody"></div>
         </div>
       </div>
+      <button class="homebtn" type="button" id="homeBtn" aria-label="Home button"><i></i></button>
     </div>
     <div class="r-side right">
       <div class="widget"><div class="wl">Battery</div><div class="batt"><div class="cell"><i></i></div><span style="font-weight:700">12%</span></div><p>The toddler is awake. Low Power Mode is basically my personality now.</p></div>
@@ -980,7 +1065,33 @@ a.trophy:hover{transform:translateY(-4px);border-color:var(--yellow)}
     ['Platforms', [['Apple','apple'],['Google','google'],['Fashion brands','F'],['CPG + telecom','C']]],
     ['Channels', [['LinkedIn','in'],['Meta ads','meta'],['Events + booths','★'],['ABM','◎']]]
   ];
-  document.getElementById('intGrid').innerHTML = groups.map(([h,items]) => `<div class="int-col"><h3>${h}</h3>${items.map(([n,k,minor]) => `<div class="app-row${minor?' minor':''}"><span class="ic">${ico(k)}</span><span class="nm">${n}</span><span class="on" aria-label="${minor?'connected and in beta':'connected'}"></span></div>`).join('')}</div>`).join('');
+  document.getElementById('intGrid').innerHTML = groups.map(([h,items]) => `<div class="int-col"><h3>${h}</h3>${items.map(([n,k,minor]) => `<div class="app-row${minor?' minor':''}"><span class="ic">${ico(k)}</span><span class="nm">${n}</span><button class="on" type="button" role="switch" aria-checked="true" data-n="${n}" aria-label="${n} integration"></button></div>`).join('')}</div>`).join('');
+
+  /* integrations: toggling one off opens an incident */
+  const IMPACT = {"Snowflake":"Summit booth downgraded to a folding table and a QR code.","Claude":"Marketing ops is back to 47 open tabs and one spreadsheet.","NVIDIA":"The GPUs have left the chat.","Gartner":"The Magic Quadrant is now just a quadrant.","The Pokémon Company":"Pikachu has stopped returning my emails.","AT&T":"Please hold. Your call is important to us.","MKT1 Capital":"My LP check is now a strongly worded memo.","Samsung":"We're down to one foldable.","Apple":"App Trend of the Year downgraded to App Trend of the Afternoon.","Google":"I'm back to handing out swag on a college campus.","Fashion brands":"I'm wearing the conference T-shirt again.","CPG + telecom":"Snacks and signal are both at zero bars.","LinkedIn":"Thought leadership output is down 100%.","Meta ads":"CAC dropped to zero. So did reach.","Events + booths":"The booth swag now lives in my garage.","ABM":"Back to spray and pray."};
+  const intGrid = document.getElementById('intGrid'), toastBox = document.createElement('div');
+  toastBox.className = 'inc-stack'; toastBox.setAttribute('aria-live','polite'); document.body.appendChild(toastBox);
+  let incN = 417;
+  function incident(title, line, kind){
+    const t = document.createElement('div'); t.className = 'inc ' + kind;
+    t.innerHTML = `<div class="inc-top"><span>INC-${incN++}</span><span class="inc-st">${kind === 'ok' ? 'Resolved' : kind === 'down' ? 'Major outage' : 'Investigating'}</span></div><b>${title}</b><p>${line}</p>`;
+    toastBox.prepend(t); while(toastBox.children.length > 3) toastBox.lastChild.remove();
+    setTimeout(() => { t.classList.add('out'); setTimeout(() => t.remove(), 400); }, 5200);
+  }
+  intGrid.addEventListener('click', e => {
+    const b = e.target.closest('.on'); if(!b) return;
+    const off = b.getAttribute('aria-checked') === 'true';
+    b.setAttribute('aria-checked', off ? 'false' : 'true'); b.closest('.app-row').classList.toggle('off', off);
+    const total = intGrid.querySelectorAll('.on').length, live = intGrid.querySelectorAll('.on[aria-checked="true"]').length, down = total - live;
+    const cnt = document.getElementById('intCnt'); cnt.lastChild.textContent = `${live} connected`; cnt.classList.toggle('warn', down > 0);
+    const hs = Math.round(live / total * 100), h = document.getElementById('intHealth'); h.querySelector('b').textContent = hs; h.className = 'health' + (hs < 50 ? ' bad' : hs < 100 ? ' warn' : '');
+    const st = document.getElementById('sysStatus');
+    st.innerHTML = down === 0 ? '<span class="dot-ok"></span>All systems operational' : live === 0 ? '<span class="dot-ok bad"></span>Major outage. Veronica is now a solo act' : `<span class="dot-ok warn"></span>Degraded performance · ${down} open incident${down > 1 ? 's' : ''}`;
+    const n = b.dataset.n;
+    if(live === 0) incident('Every integration is down', 'Veronica is running marketing alone with a laptop and a lot of coffee. Reconnect anything to restore service.', 'down');
+    else if(off) incident(`${n} disconnected`, `Impact: ${IMPACT[n]}`, 'warn');
+    else incident(`${n} reconnected`, down === 0 ? 'Root cause: a visitor clicking every toggle on my website. Postmortem to follow. All systems operational.' : 'Service restored. The postmortem will be blameless.', 'ok');
+  });
 
   /* ---------- B2C ---------- */
   const stats = [["Launches",94],["Community",88],["Paid media",86],["Stunts",97]];
@@ -1118,12 +1229,20 @@ a.trophy:hover{transform:translateY(-4px);border-color:var(--yellow)}
   function tick(){
     const d = new Date();
     const t = d.toLocaleTimeString('en-US',{hour:'numeric',minute:'2-digit',timeZone:tz}).replace(/\s?[AP]M/,'');
-    ['sbTime','lClock','hClock'].forEach(id => document.getElementById(id).textContent = t);
+    ['sbTime','lClock'].forEach(id => document.getElementById(id).textContent = t);
     document.getElementById('lDate').textContent = d.toLocaleDateString('en-US',{weekday:'long',month:'long',day:'numeric',timeZone:tz});
   }
   tick(); setInterval(tick, 15000);
   const lock = document.getElementById('lock'), home = document.getElementById('home');
-  lock.addEventListener('click', () => { lock.classList.add('gone'); home.classList.add('on'); });
+  const unlock = () => { lock.classList.add('gone'); home.classList.add('on'); };
+  const knob = document.getElementById('knob'), slider = document.getElementById('slider');
+  let dragX = null, moved = 0;
+  const maxX = () => slider.clientWidth - knob.offsetWidth - 6;
+  knob.addEventListener('pointerdown', e => { dragX = e.clientX; moved = 0; knob.setPointerCapture(e.pointerId); knob.style.transition = 'none'; });
+  knob.addEventListener('pointermove', e => { if(dragX === null) return; moved = Math.max(0, Math.min(maxX(), e.clientX - dragX)); knob.style.transform = `translateX(${moved}px)`; slider.style.setProperty('--fade', 1 - moved / maxX()); });
+  knob.addEventListener('pointerup', () => { if(dragX === null) return; dragX = null; knob.style.transition = ''; if(moved > maxX() * .8 || moved < 4){ knob.style.transform = `translateX(${maxX()}px)`; setTimeout(unlock, 180); } else { knob.style.transform = ''; slider.style.setProperty('--fade', 1); } });
+  lock.addEventListener('click', e => { if(!e.target.closest('.knob')) unlock(); });
+  document.getElementById('homeBtn').addEventListener('click', () => { const sh = document.getElementById('sheet'); if(sh.classList.contains('on')) sh.classList.remove('on'); else if(home.classList.contains('on')){ home.classList.remove('on'); lock.classList.remove('gone'); knob.style.transform = ''; slider.style.setProperty('--fade', 1); } else unlock(); });
 
   const I = {
     milk:'<path d="M9 2h6v3l2 3v12a2 2 0 0 1-2 2H9a2 2 0 0 1-2-2V8l2-3z"/><path d="M7 12h10"/>',
@@ -1134,7 +1253,8 @@ a.trophy:hover{transform:translateY(-4px);border-color:var(--yellow)}
     owl:'<circle cx="9" cy="10" r="3"/><circle cx="15" cy="10" r="3"/><path d="M5 6l2 2M19 6l-2 2M12 14l-1 2h2zM6 14c0 4 3 7 6 7s6-3 6-7"/>',
     pin:'<path d="M12 21s-6-6-6-11a6 6 0 0 1 12 0c0 5-6 11-6 11z"/><circle cx="12" cy="10" r="2"/>',
     photo:'<rect x="3" y="5" width="18" height="14" rx="3"/><circle cx="9" cy="10" r="2"/><path d="M21 16l-5-5-8 8"/>',
-    chat:'<path d="M4 5h16v11H9l-5 4z"/>'
+    chat:'<path d="M4 5h16v11H9l-5 4z"/>',
+    book:'<path d="M4 5a2 2 0 0 1 2-2h5v17H6a2 2 0 0 0-2 1z"/><path d="M20 5a2 2 0 0 0-2-2h-5v17h5a2 2 0 0 1 2 1z"/>'
   };
   const svg = k => `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${I[k]}</svg>`;
   const mapSvg = `<svg viewBox="0 0 300 170" role="img" aria-label="Map pins for London, New York, New Jersey, Houston and Mountain View"><defs><pattern id="g" width="15" height="15" patternUnits="userSpaceOnUse"><path d="M15 0H0V15" fill="none" stroke="#EEEEF1"/></pattern></defs><rect width="300" height="170" fill="url(#g)"/><path d="M258 46 C200 10, 140 30, 120 58 M120 58 L124 66 M124 66 C110 100, 90 112, 82 118 M82 118 C60 110, 40 96, 28 78" fill="none" stroke="#E04A3A" stroke-width="2" stroke-dasharray="4 4"/><g font-family="Onest, sans-serif" font-size="10" font-weight="700" fill="#0B0B0D"><circle cx="258" cy="46" r="6" fill="#FFE135"/><text x="258" y="34" text-anchor="middle">London</text><circle cx="120" cy="58" r="6" fill="#FFE135"/><text x="104" y="52" text-anchor="end">New York</text><circle cx="124" cy="66" r="5" fill="#FFE135"/><text x="134" y="80">New Jersey</text><circle cx="82" cy="118" r="6" fill="#FFE135"/><text x="82" y="138" text-anchor="middle">Houston (Rice)</text><circle cx="28" cy="78" r="9" fill="#FF6F5E" opacity=".3"/><circle cx="28" cy="78" r="6" fill="#FF6F5E"/><text x="28" y="98" text-anchor="middle">Mountain View</text></g></svg>`;
@@ -1163,11 +1283,13 @@ a.trophy:hover{transform:translateY(-4px);border-color:var(--yellow)}
     {k:'pin', nm:'Maps', bg:'#FFFFFF', fg:'#22E07A', body:`<h4>Where I'm from</h4><div class="pins">${mapSvg}</div><p>I grew up between London, New York and New Jersey. I went to college in Houston and live in Mountain View now.</p>`},
     {k:'photo', nm:'Photos', bg:'#FFFFFF', fg:'#E04A3A', body:`<h4>Photos</h4><div class="ph"><img src="img/olympics-2024.jpg" alt="Paris 2024 with Mitchell" loading="lazy"><img src="img/olympics-2012.jpg" alt="London 2012 with Mitchell" loading="lazy"><img src="img/pageant.jpg" alt="Pageant portrait" loading="lazy"><img src="img/summit-swing.jpg" alt="Snowflake Summit" loading="lazy"></div>`},
     {txt:'ENFP', nm:'Personality', bg:'#FFE135', fg:'#0B0B0D', body:`<h4>ENFP</h4><div class="stat2 stat4"><div><b>E</b><span>Extravert</span></div><div><b>N</b><span>Intuitive</span></div><div><b>F</b><span>Feeling</span></div><div><b>P</b><span>Perceiving</span></div></div><p>I'm big on ideas and people energy and I usually have a launch plan for everything.</p><p>The plot twist is that I'm also the one who builds the structure when things get ambiguous. I'll bring the sticky notes and then turn them into a plan.</p>`},
+    {k:'book', nm:'Books', bg:'#8B5A2B', fg:'#FFF4DC', live:'books', body:`<h4>On my shelf</h4><p class="muted" id="bkSrc">Pulling from Goodreads…</p><div class="bk-sec">Currently reading</div><div class="bk-row" id="bkNow"></div><div class="bk-sec">All-time favorites</div><div class="bk-grid" id="bkFav"></div><a class="go" href="https://www.goodreads.com/user/show/119872802-veronica" target="_blank" rel="noopener">Follow me on Goodreads</a>`},
+    {txt:'in', nm:'LinkedIn', bg:'#0A66C2', fg:'#FFFFFF', live:'li', body:`<div class="li-head"><img src="img/headshot.jpg" alt=""><div><b>Veronica Saron</b><span>Marketing leader across AI, gaming and consumer tech</span></div></div><a class="li-follow" href="https://www.linkedin.com/in/veron1ca/" target="_blank" rel="noopener">+ Follow</a><div class="bk-sec">Recent posts</div><div class="li-feed" id="liFeed"><p class="muted">Loading posts…</p></div>`},
     {k:'chat', nm:'Messages', bg:'#22E07A', fg:'#FFFFFF', body:`<div class="bubble">hi!! wait were you on Pokémon GO??</div><div class="bubble me">haha yes. email is easiest</div><div class="bubble me">veronicathemarketer@gmail.com</div><a class="go" href="https://www.linkedin.com/in/veron1ca/" target="_blank" rel="noopener">Or find me on LinkedIn</a>`}
   ];
   const icon = a => a.img ? `<img src="${a.img}" alt="">` : a.txt ? `<span class="txticon">${a.txt}</span>` : svg(a.k);
   const appBtn = (a,i) => `<button class="app" type="button" data-i="${i}" aria-label="Open ${a.nm}"><span class="ico" style="background:${a.bg};color:${a.fg||'#fff'}">${icon(a)}</span>${a.nm}</button>`;
-  const dockIdx = [0,6,8,9];
+  const dockIdx = [0,11,8,12];
   document.getElementById('apps').innerHTML = apps.map((a,i) => dockIdx.includes(i) ? '' : appBtn(a,i)).join('');
   document.getElementById('dock').innerHTML = dockIdx.map(i => appBtn(apps[i],i)).join('');
   const sheet = document.getElementById('sheet');
@@ -1178,7 +1300,26 @@ a.trophy:hover{transform:translateY(-4px);border-color:var(--yellow)}
     document.getElementById('sheetTitle').textContent = a.nm;
     const body = document.getElementById('sheetBody'); body.innerHTML = a.body; body.scrollTop = 0;
     sheet.classList.add('on');
+    if(a.live === 'books') loadBooks();
+    if(a.live === 'li') loadLinkedIn();
   });
+  const BK_FALLBACK = {favorites:[{"title": "Influence", "author": "Robert B. Cialdini", "url": "https://www.goodreads.com/book/show/28815.Influence", "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1391026083l/28815._SY300_.jpg"}, {"title": "The 22 Immutable Laws of Marketing", "author": "Al Ries", "url": "https://www.goodreads.com/book/show/6646695-the-22-immutable-laws-of-marketing", "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1328335450l/6646695._SY300_.jpg"}, {"title": "The Devil Wears Prada", "author": "Lauren Weisberger", "url": "https://www.goodreads.com/book/show/5139.The_Devil_Wears_Prada", "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1388179604l/5139._SY300_.jpg"}, {"title": "Stories of Your Life and Others", "author": "Ted Chiang", "url": "https://www.goodreads.com/book/show/223380.Stories_of_Your_Life_and_Others", "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1356138316l/223380._SY300_.jpg"}, {"title": "The 48 Laws of Power", "author": "Robert Greene", "url": "https://www.goodreads.com/book/show/1303.The_48_Laws_of_Power", "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1694722764l/1303._SY300_.jpg"}, {"title": "The Bell Jar", "author": "Sylvia Plath", "url": "https://www.goodreads.com/book/show/25851562-the-bell-jar", "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1576419547l/25851562._SY300_.jpg"}, {"title": "One Hundred Years of Solitude", "author": "Gabriel García Márquez", "url": "https://www.goodreads.com/book/show/320.One_Hundred_Years_of_Solitude", "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1327881361l/320._SY300_.jpg"}, {"title": "The Help", "author": "Kathryn Stockett", "url": "https://www.goodreads.com/book/show/4667024-the-help", "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1622355533l/4667024._SY300_.jpg"}, {"title": "The Night Circus", "author": "Erin Morgenstern", "url": "https://www.goodreads.com/book/show/11506091-the-night-circus", "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1327894371l/11506091._SY300_.jpg"}, {"title": "Daring Greatly", "author": "Brené Brown", "url": "https://www.goodreads.com/book/show/13588356-daring-greatly", "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1337110319l/13588356._SY300_.jpg"}, {"title": "Mastery", "author": "Robert Greene", "url": "https://www.goodreads.com/book/show/13589182-mastery", "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1348274726l/13589182._SY300_.jpg"}], reading:[{"title": "Buddenbrooks", "author": "Thomas Mann", "url": "https://www.goodreads.com/book/show/243666842-buddenbrooks", "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1762502231l/243666842._SY300_.jpg"}, {"title": "Wanting", "author": "Luke Burgis", "url": "https://www.goodreads.com/book/show/56082939-wanting", "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1606653992l/56082939._SY300_.jpg"}, {"title": "The Inner Game of Tennis", "author": "W. Timothy Gallwey", "url": "https://www.goodreads.com/book/show/18875853-the-inner-game-of-tennis", "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1385014849l/18875853._SY300_.jpg"}, {"title": "Carrie Soto Is Back", "author": "Taylor Jenkins Reid", "url": "https://www.goodreads.com/book/show/60437824-carrie-soto-is-back", "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1649870818l/60437824._SY300_.jpg"}]};
+  const bookTile = b => `<a class="bk" href="${b.url}" target="_blank" rel="noopener" title="${b.title} by ${b.author}"><img src="${b.cover}" alt="${b.title} by ${b.author}" loading="lazy"></a>`;
+  async function loadBooks(){
+    let d = BK_FALLBACK, live = false;
+    try { const r = await fetch('/api/books'); if(r.ok){ const j = await r.json(); if(j.favorites && j.favorites.length){ d = j; live = true; } } } catch(e){}
+    const now = document.getElementById('bkNow'), fav = document.getElementById('bkFav'), src = document.getElementById('bkSrc'); if(!now) return;
+    now.innerHTML = d.reading.slice(0,4).map(bookTile).join(''); fav.innerHTML = d.favorites.map(bookTile).join('');
+    src.textContent = live ? 'Live from my Goodreads. It updates when my shelves do.' : 'From my Goodreads shelves.';
+  }
+  const liDate = urn => { try { return new Date(Number(BigInt(urn.split(':').pop()) >> 22n)).toLocaleDateString('en-US',{month:'short',day:'numeric',year:'numeric'}); } catch(e){ return ''; } };
+  async function loadLinkedIn(){
+    const feed = document.getElementById('liFeed'); if(!feed) return;
+    try {
+      const d = await fetch('data/linkedin.json', {cache:'no-cache'}).then(r => r.json());
+      feed.innerHTML = d.posts.map(p => `<a class="li-post" href="https://www.linkedin.com/feed/update/${p.urn}/" target="_blank" rel="noopener"><span class="li-date">${liDate(p.urn)}</span><p>${p.text}</p><span class="li-more">Read on LinkedIn ▸</span></a>`).join('');
+    } catch(e){ feed.innerHTML = '<p class="muted">My posts live on LinkedIn.</p>'; }
+  }
   document.getElementById('sheetClose').addEventListener('click', () => sheet.classList.remove('on'));
 })();
 </script>
