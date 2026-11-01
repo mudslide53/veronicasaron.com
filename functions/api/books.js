@@ -33,14 +33,13 @@ const decode = s => s.replace(/&amp;/g, '&').replace(/&#39;|&#x27;/g, "'").repla
 
 export async function onRequestGet({ request }) {
   const cache = caches.default;
-  const key = new Request(new URL('/api/books', request.url).toString());
+  const key = new Request(new URL('/api/books?cache=v3', request.url).toString());
   const hit = await cache.match(key);
-  if (hit && !new URL(request.url).searchParams.has('debug')) return hit;
+  if (hit) return hit;
   try {
     const r = await fetch(PROFILE, { headers: { 'user-agent': 'Mozilla/5.0 (veronicasaron.com bookshelf)', accept: 'text/html' } });
     if (!r.ok) throw new Error('goodreads ' + r.status);
     const html = await r.text();
-    if (new URL(request.url).searchParams.has('debug')) { const i = html.lastIndexOf('urrently Reading'); return new Response(JSON.stringify({ len: html.length, title: (html.match(/<title>([^<]*)/)||[])[1], around: html.slice(Math.max(0,i-200), i+3000) }), { headers: { 'content-type': 'application/json', 'cache-control': 'no-store' } }); }
     const data = { source: PROFILE, fetched: new Date().toISOString(), ...parse(html) };
     if (!data.favorites.length) throw new Error('no books parsed');
     const res = new Response(JSON.stringify(data), { headers: { 'content-type': 'application/json', 'cache-control': 'public, max-age=21600' } });
