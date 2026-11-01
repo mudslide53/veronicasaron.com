@@ -3,15 +3,21 @@ const PROFILE = 'https://www.goodreads.com/user/show/119872802-veronica';
 
 function parse(html) {
   const books = [];
-  const re = /<a[^>]+href="(\/book\/show\/[^"]+)"[^>]*>\s*<img([^>]+)>/g;
+  const re = /<a([^>]*?)href="(\/book\/show\/[^"]+)"([^>]*)>\s*<img([^>]+)>/g;
   let m;
   while ((m = re.exec(html))) {
-    const attrs = m[2];
-    const alt = (attrs.match(/alt="([^"]+)"/) || [])[1];
+    const aAttrs = m[1] + m[3], attrs = m[4];
+    const alt = (attrs.match(/alt="([^"]+)"/) || [])[1] || '';
     const src = (attrs.match(/src="([^"]+)"/) || [])[1];
-    if (!alt || !src || !/ by /.test(alt)) continue;
-    const [title, author] = alt.split(/ by (?=[^]*$)/);
-    books.push({ title: decode(title), author: decode(author || ''), url: 'https://www.goodreads.com' + m[1], cover: src.replace(/\._S[XY]\d+_/, '._SY300_'), at: m.index, fav: /inlineblock/.test(attrs) });
+    if (!src || !/\/books\//.test(src)) continue;
+    let title, author;
+    if (/ by /.test(alt) && !/\.\.\.$/.test(alt)) { [title, author] = alt.split(/ by (?=[^]*$)/); }
+    else {
+      title = (aAttrs.match(/title="([^"]+)"/) || [])[1] || alt.replace(/\.\.\.$/, '');
+      const near = html.slice(m.index, m.index + 3000).match(/class="authorName"[^>]*>(?:<span[^>]*>)?([^<]+)/);
+      author = near ? near[1] : '';
+    }
+    books.push({ title: decode(title.split(':')[0]), author: decode(author || ''), url: 'https://www.goodreads.com' + m[2], cover: src.replace(/\._S[XY]\d+_/, '._SY300_'), at: m.index, fav: /inlineblock/.test(attrs) });
   }
   const favAt = html.search(/favorite books/i);
   const rel = html.slice(Math.max(0, favAt)).search(/is currently reading/i);
