@@ -29,7 +29,7 @@ export async function onRequestGet({ request }) {
   const cache = caches.default;
   const key = new Request(new URL('/api/books', request.url).toString());
   const hit = await cache.match(key);
-  if (hit) return hit;
+  if (hit && !new URL(request.url).searchParams.has('debug')) return hit;
   try {
     const r = await fetch(PROFILE, { headers: { 'user-agent': 'Mozilla/5.0 (veronicasaron.com bookshelf)', accept: 'text/html' } });
     if (!r.ok) throw new Error('goodreads ' + r.status);
