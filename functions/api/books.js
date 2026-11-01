@@ -37,6 +37,6 @@ export async function onRequestGet({ request }) {
     await cache.put(key, res.clone());
     return res;
   } catch (e) {
-    return new Response(JSON.stringify({ error: String(e) }), { status: 502, headers: { 'content-type': 'application/json' } });
+    return new Response(JSON.stringify({ error: String(e) }), { status: 200, headers: { 'content-type': 'application/json', 'cache-control': 'no-store' } });
   }
 }
