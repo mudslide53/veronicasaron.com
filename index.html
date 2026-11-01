@@ -575,6 +575,28 @@ a.trophy:hover{transform:translateY(-4px);border-color:var(--yellow)}
 .li-post{display:block;background:#fff;border:1px solid #a9b1bb;border-radius:9px;padding:10px 12px;color:inherit;text-decoration:none;font-size:13px;line-height:1.4}
 .li-post .li-date{font-size:11px;color:#6d84a2;font-weight:700}.li-post p{margin:3px 0 4px}.li-post .li-more{font-size:12px;color:#0A66C2;font-weight:700}
 .y07 .app .txticon{font-family:var(--f-07);font-size:20px;font-weight:700;letter-spacing:-.02em}
+
+.y07 .app .ico img{object-position:50% 50%}
+.np{flex:none;margin:-12px -12px 0;background:linear-gradient(#2b2b2b,#0b0b0b);color:#fff;padding-bottom:16px;display:flex;flex-direction:column;align-items:center}
+.np-bar{width:100%;text-align:center;padding:6px;font-size:12px;font-weight:700;background:linear-gradient(#5a5a5a,#2e2e2e 50%,#1f1f1f 51%,#2a2a2a);border-bottom:1px solid #000;text-shadow:0 -1px 0 #000}
+.np-art{width:170px;height:170px;margin-top:14px;border-radius:2px;box-shadow:0 8px 20px #000;-webkit-box-reflect:below 2px linear-gradient(transparent 70%,#ffffff30)}
+.np-meta{text-align:center;margin-top:26px;line-height:1.35}.np-meta b{display:block;font-size:15px}.np-meta span{font-size:12px;color:#b8b8b8}
+.np-scrub{display:flex;align-items:center;gap:8px;width:86%;margin-top:10px;font-size:10px;color:#ccc}
+.np-scrub i{flex:1;height:6px;border-radius:3px;background:linear-gradient(#111,#444);box-shadow:inset 0 1px 2px #000}
+.np-scrub b{display:block;width:12px;height:12px;margin-top:-3px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#fff,#9aa);box-shadow:0 1px 2px #000}
+.np-play{margin-top:12px;width:58px;height:58px;border-radius:50%;display:grid;place-items:center;background:linear-gradient(#f5f5f5,#c9c9c9 50%,#b5b5b5 51%,#e2e2e2);box-shadow:0 2px 6px #000,inset 0 1px 0 #fff;animation:npPulse 2s ease-in-out infinite}
+.np-play svg{width:28px;height:28px;fill:#222;margin-left:3px}
+@keyframes npPulse{50%{box-shadow:0 0 0 6px #ffffff22,0 2px 6px #000,inset 0 1px 0 #fff}}
+.gtable{flex:none;background:#fff;border:1px solid #a9b1bb;border-radius:9px;overflow:hidden}
+.gt-h{font-size:12px;font-weight:700;color:#4c566c;padding:8px 12px;background:linear-gradient(#f4f6f8,#e4e8ed);border-bottom:1px solid #c8cfd7;text-transform:uppercase;letter-spacing:.04em}
+.gt-r{display:block;padding:10px 12px;border-top:1px solid #e3e6ea;font-size:13px;line-height:1.4;color:inherit;text-decoration:none}
+.gt-h + .gt-r,.gtable > .gt-r:first-child{border-top:0}
+.gt-r b{display:block;font-size:14px}.gt-r span{display:block;color:#55555F}
+.gt-link{position:relative;padding-right:28px}.gt-link::after{content:"›";position:absolute;right:12px;top:50%;transform:translateY(-50%);font-size:22px;color:#9aa3ad}
+.sash-wrap{flex:none;position:relative;overflow:hidden;border-radius:9px}
+.sash{position:absolute;left:-40px;bottom:46px;transform:rotate(-24deg);background:linear-gradient(#fff6dd,#e8cf8a);color:#5a3d00;font-family:var(--f-glam);font-style:italic;font-size:15px;padding:5px 60px;box-shadow:0 3px 8px #0006;white-space:nowrap}
+.y07 .stat2 div{background:#fff}
+.y07 .sheet-body > *{flex-shrink:0}
 </style>
 </head>
 <body>
@@ -800,7 +822,7 @@ a.trophy:hover{transform:translateY(-4px);border-color:var(--yellow)}
 
   <div class="wrap g-sec" id="bonus">
     <h2 class="g-h"><small>BONUS STAGE</small>Olympic Journey</h2>
-    <p class="bonus-lede">My little brother Mitchell Saron fences sabre for Team USA. In 2012 we went to the London Olympics as fans. Back then making the team was still his dream. Twelve years later he competed in Paris. I ran his marketing and business the whole way there as his manager and agent.</p>
+    <p class="bonus-lede">My little brother Mitchell Saron fences sabre for Team USA. In 2012 we went to the London Olympics as fans. Back then making the team was still his dream. Twelve years later he competed in Paris. I got his marketing and business off the ground in 2024 as his first manager and agent, with an early OpenClaw agent doing a lot of the legwork. Then we handed him to a real management team that lands five-figure contracts on a regular basis. He's in much better hands now.</p>
     <div class="then-now">
       <figure class="panel snap"><img src="img/olympics-2012.jpg" alt="Veronica and a young Mitchell outside a London 2012 Olympics venue" loading="lazy"><figcaption><b>2012 · LONDON</b><span>We were in the crowd in London when making the team was still a dream.</span></figcaption></figure>
       <div class="arrow" aria-hidden="true"><span class="yrs">12 YEARS<br>LATER</span><svg class="ar" viewBox="0 0 12 8" shape-rendering="crispEdges"><path fill="#FFE135" d="M0 3h7V0h1v1h1v1h1v1h1v1h1v1h-1v1h-1v1H9v1H8v1H7V5H0z"/><path fill="#FF2E93" d="M0 5h7v1H0z"/></svg></div>
@@ -809,7 +831,7 @@ a.trophy:hover{transform:translateY(-4px);border-color:var(--yellow)}
     <div class="panel quest">
       <div class="q-stats">
         <div><b>20K</b><span>followers I grew his accounts to while he trained</span></div>
-        <div><b>200K+</b><span>Instagram followers today with me as his manager and agent</span></div>
+        <div><b>200K+</b><span>Instagram followers today with his real management team</span></div>
         <div><b>67K+</b><span>combined following across Instagram, TikTok and email before Paris</span></div>
         <div><b>12+</b><span>brand partners and $200K+ in partnership value</span></div>
       </div>
@@ -1125,8 +1147,8 @@ a.trophy:hover{transform:translateY(-4px);border-color:var(--yellow)}
       ["DAOs","and crypto startups I helped grow and raise money during the 2021 boom (I came out of it owning very few JPEGs)"],
       ["Product roadmap","and competitive analysis I built for an on-chain protocol that lets creators publish and get paid"]],
       quests:[]},
-    {id:"kaya", nm:"Edyn → Kaya", yr:"Road to Paris", role:"Level 5 · Manager and agent for a Team USA Olympian", loot:[
-      ["200K+","Instagram followers today with me as his manager and agent"],["60+","media outlets including ESPN, The Wall Street Journal, TIME, NBC and Us Weekly"],["12+","brand partners and $200K+ in partnership value"],["1","electrolyte elixir we made and handed out to Team USA athletes in the Olympic Village"],["1","cease and desist, which is how Edyn became Kaya"],["Club Kaya","the wellness community that runs seasonal challenges"]],
+    {id:"kaya", nm:"Edyn → Kaya", yr:"Road to Paris", role:"Level 5 · First manager and agent for a Team USA Olympian", loot:[
+      ["200K+","Instagram followers today with his real management team"],["2024","the year I managed him before we handed him to people who land five-figure deals for a living"],["60+","media outlets including ESPN, The Wall Street Journal, TIME, NBC and Us Weekly"],["12+","brand partners and $200K+ in partnership value"],["1","electrolyte elixir we made and handed out to Team USA athletes in the Olympic Village"],["1","cease and desist, which is how Edyn became Kaya"],["Club Kaya","the wellness community that runs seasonal challenges"]],
       quests:[{h:"OLYMPIC JOURNEY UNLOCKED",img:"img/olympics-2024.jpg",alt:"Veronica and her brother Mitchell at the Louvre during the Paris 2024 Olympics",pos:"50% 60%",href:"#bonus",go:"▼ PLAY THE OLYMPIC JOURNEY",t:"This level is about my brother Mitchell's road to the Olympics. The full story is right below the map."}]}
   ];
   const nodesEl = document.getElementById('nodes'), levelEl = document.getElementById('level');
@@ -1258,7 +1280,7 @@ a.trophy:hover{transform:translateY(-4px);border-color:var(--yellow)}
   const svg = k => `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${I[k]}</svg>`;
   const mapSvg = `<svg viewBox="0 0 300 170" role="img" aria-label="Map pins for London, New York, New Jersey, Houston and Mountain View"><defs><pattern id="g" width="15" height="15" patternUnits="userSpaceOnUse"><path d="M15 0H0V15" fill="none" stroke="#EEEEF1"/></pattern></defs><rect width="300" height="170" fill="url(#g)"/><path d="M258 46 C200 10, 140 30, 120 58 M120 58 L124 66 M124 66 C110 100, 90 112, 82 118 M82 118 C60 110, 40 96, 28 78" fill="none" stroke="#E04A3A" stroke-width="2" stroke-dasharray="4 4"/><g font-family="Onest, sans-serif" font-size="10" font-weight="700" fill="#0B0B0D"><circle cx="258" cy="46" r="6" fill="#FFE135"/><text x="258" y="34" text-anchor="middle">London</text><circle cx="120" cy="58" r="6" fill="#FFE135"/><text x="104" y="52" text-anchor="end">New York</text><circle cx="124" cy="66" r="5" fill="#FFE135"/><text x="134" y="80">New Jersey</text><circle cx="82" cy="118" r="6" fill="#FFE135"/><text x="82" y="138" text-anchor="middle">Houston (Rice)</text><circle cx="28" cy="78" r="9" fill="#FF6F5E" opacity=".3"/><circle cx="28" cy="78" r="6" fill="#FF6F5E"/><text x="28" y="98" text-anchor="middle">Mountain View</text></g></svg>`;
   const apps = [
-    {k:'milk', nm:'Human Milk Ops', bg:'#FFE1DB', fg:'#E04A3A', body:`
+    {k:'milk', icon:'human-milk-ops', nm:'Human Milk Ops', bg:'#FFE1DB', fg:'#E04A3A', body:`
       <h4>Human Milk Operations</h4>
       <p>**puts on my best forbes30u30 humblebrag voice, ahem**</p>
       <p>I started Human Milk Operations to bring awareness to the full-time job that is feeding a baby. (Now an ambitious toddler who can't give it up because we have OKRs to hit!!)</p>
@@ -1267,25 +1289,49 @@ a.trophy:hover{transform:translateY(-4px);border-color:var(--yellow)}
       <div class="stat2"><div><b>18,751</b><span>impressions</span></div><div><b>~50</b><span>spam emails a day</span></div></div>
       <p class="muted">I'm all for AI saving time. But this is not the way 🙅🏽‍♀️</p>
       <a class="go" href="https://www.linkedin.com/posts/veron1ca_puts-on-my-best-forbes30u30-humblebrag-share-7498041397665718273-bTqt/" target="_blank" rel="noopener">Read the post</a>`},
-    {k:'sax', nm:'Music', bg:'#0B0B0D', fg:'#F4F4F6', body:`<h4>Saxophone</h4><p>I play the sax and I'm trying to get better at it. It's also sort of my stage-presence practice because working remotely means I almost never perform in front of anyone.</p><p class="muted">Lately I'm playing a lot of scales.</p>`},
-    {k:'heart', nm:'Healthy Tech Mom', bg:'#E04A3A', fg:'#FFFFFF', body:`<h4>@healthytechmom</h4><p>This is where I post about health, AI and mom life. It's mostly the stuff that doesn't fit on LinkedIn.</p><a class="go" href="https://www.instagram.com/healthytechmom/" target="_blank" rel="noopener">Open on Instagram</a>`},
-    {img:'img/pageant.jpg', nm:'Pageant', bg:'#FFE135', body:`<img class="hero-img" src="img/pageant.jpg" alt="Veronica in a champagne gown with long curled hair and crystal earrings" loading="lazy"><h4>The pageant era</h4><p>I'm competing for Mrs. California in the USOA system. Honestly it's my excuse to work on stage presence. That's hard to practice from a home office.</p><p>I think the walk is harder than any launch I've run.</p>`},
-    {k:'hand', nm:'Volunteer', bg:'#FFFFFF', fg:'#E04A3A', body:`<h4>Giving back</h4><p><b>Tareyton Home</b> in San Ramon: I make things with AI for the residents and help out on the back end.</p><p><b>Cupertino Symphonic Band</b>: I helped the band start using AI for fundraising. They also run a canned food drive every fall for West Valley Community Services.</p>`},
-    {k:'owl', nm:'Rice', bg:'#0B0B0D', fg:'#FFE135', body:`<h4>Rice University</h4>
+    {k:'sax', icon:'music', nm:'Music', bg:'#0B0B0D', fg:'#F4F4F6', body:`<div class="np"><div class="np-bar"><span>Now Playing</span></div><img class="np-art" src="img/icons/music.jpg" alt=""><div class="np-meta"><b>Cupertino Symphonic Band</b><span>Alto sax solo · that's me at 0:00</span></div><div class="np-scrub"><span>0:00</span><i><b></b></i><span>-4:12</span></div><a class="np-play" href="https://www.youtube.com/watch?v=ybBhdcTbhkI" target="_blank" rel="noopener" aria-label="Play the video on YouTube"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></a></div>
+      <p>I play alto sax in the <b>Cupertino Symphonic Band</b>, a community wind ensemble that has been around since 1989. Most of my bandmates are retirees who have been playing for decades. I was band president back in high school, so sitting in the sax section with them keeps me humble.</p>
+      <p>Hit play above and you'll catch the alto sax solo right at the beginning. That's me.</p>
+      <div class="stat2"><div><b>1989</b><span>when the band started</span></div><div><b>40+</b><span>musicians</span></div><div><b>Free</b><span>every concert</span></div></div>
+      <div class="gtable"><div class="gt-h">Next concert</div><div class="gt-r"><b>Winter Concert</b><span>Sunday, December 20 · 3 p.m.</span><span>Quinlan Community Center, Cupertino</span></div></div>
+      <div class="gtable"><a class="gt-r gt-link" href="https://www.cupertinosymphonicband.org/" target="_blank" rel="noopener"><b>Band website</b><span>Concerts, history and how to join</span></a><a class="gt-r gt-link" href="https://www.youtube.com/results?search_query=cupertino+symphonic+band" target="_blank" rel="noopener"><b>The band on YouTube</b><span>Caravan, Cuphead, holiday concerts and more</span></a></div>`},
+
+    {k:'heart', icon:'healthy-tech-mom', nm:'Healthy Tech Mom', bg:'#E04A3A', fg:'#FFFFFF', body:`<h4>@healthytechmom</h4><p>This is where I post about health, AI and mom life. It's mostly the stuff that doesn't fit on LinkedIn.</p><a class="go" href="https://www.instagram.com/healthytechmom/" target="_blank" rel="noopener">Open on Instagram</a>`},
+    {img:'img/pageant.jpg', icon:'pageant', nm:'Pageant', bg:'#FFE135', body:`<div class="sash-wrap"><img class="hero-img" src="img/pageant.jpg" alt="Veronica in a champagne gown with long curled hair and crystal earrings" loading="lazy"><span class="sash">USOA Mrs. California</span></div>
+      <h4>USOA Mrs. California</h4>
+      <p>I'm competing for USOA Mrs. California. After my daughter was born, the pageant became my way back into my community. It also gave me a reason to get strong again and lose the postpartum weight.</p>
+      <p>I want working moms to see that we can and should do fun things like pageants. Feeling beautiful is allowed, even with a toddler and a full-time job.</p>
+      <div class="gtable"><div class="gt-h">My platform</div><div class="gt-r"><b>Empowering with AI</b><span>I help nonprofits, changemakers and moms groups use AI to buy back their time. Open the Volunteer app for the details.</span></div></div>
+      <p class="muted">Bonus: the walk turned out to be harder than any launch I've run.</p>`},
+
+    {k:'hand', icon:'volunteer', nm:'Volunteer', bg:'#FFFFFF', fg:'#E04A3A', body:`<h4>Giving back</h4>
+      <div class="gtable"><div class="gt-h">Empowering with AI · my USOA platform</div>
+        <div class="gt-r"><span>I help local nonprofits, changemaker groups and moms groups use AI to buy back their time and save money. Mostly that means grant writing, simple workflows and the admin that eats a whole weekend. No robot talk required.</span></div>
+        <div class="gt-r"><b>A favorite story</b><span>An 80-year-old woman in Houston runs an arts nonprofit and was spending her weekends writing grants. I showed her how to do it in a couple of hours. She has brought in tens of thousands in grant money since.</span></div>
+        <div class="gt-r"><b>Moms groups</b><span>Some of the moms I work with built a "digital twin" of their family life so they aren't holding every detail in their heads.</span></div>
+        <div class="gt-r"><b>Paying it forward</b><span>When a nonprofit needs an AI subscription I sponsor it. When free tools do the job we use those.</span></div>
+      </div>
+      <div class="gtable"><div class="gt-h">Around the community</div>
+        <div class="gt-r"><b>Tareyton Home</b><span>An elder care home in San Ramon. I make things with AI for the residents and help out on the back end.</span></div>
+        <div class="gt-r"><b>Cupertino Symphonic Band</b><span>I helped the band start using AI for fundraising. They also run a canned food drive every fall for West Valley Community Services.</span></div>
+        <div class="gt-r"><b>Team USA</b><span>I'm a member of the U.S. Olympic &amp; Paralympic Foundation NextGen Council on the road to LA28.</span></div>
+      </div>`},
+
+    {k:'owl', icon:'rice', nm:'Rice', bg:'#0B0B0D', fg:'#FFE135', body:`<h4>Rice University</h4>
       <p>I grew up in the Northeast and had a gut feeling that I had to go to Rice in Houston no matter what it took. I'll admit the weather was a big part of it because I was very done with snowstorms.</p>
       <p>Thanks to Rice's open curriculum I got to take a bit of everything. My favorite class was COMP 140 with Professor Devika Subramanian. I loved it except for the part where I had to write actual code. I also wrote for Seventeen Magazine on the side.</p>
       <p>The residential colleges are basically Harry Potter. You get sorted into one the day you arrive and you stay there all four years. There are no sororities or fraternities. I got sorted into <b>Will Rice</b> (Will Rice, Will Sweep! 🧹). That's how I met my husband.</p>
       <div class="stat2"><div><b>2014</b><span>Economics cum laude and a merit scholarship</span></div><div><b>Will Rice</b><span>my college and where we met</span></div></div>
       <p>I also founded OwlSpark, Rice's startup accelerator. As of 2025, 229 Rice founders have gone through it and their companies have raised $116M. And I won the Google Global Challenge in 2012.</p>
       <p class="muted">I like the line "you can only connect the dots looking back." Rice turned out to be one of the biggest dots in my life.</p>`},
-    {k:'pin', nm:'Maps', bg:'#FFFFFF', fg:'#22E07A', body:`<h4>Where I'm from</h4><div class="pins">${mapSvg}</div><p>I grew up between London, New York and New Jersey. I went to college in Houston and live in Mountain View now.</p>`},
-    {k:'photo', nm:'Photos', bg:'#FFFFFF', fg:'#E04A3A', body:`<h4>Photos</h4><div class="ph"><img src="img/olympics-2024.jpg" alt="Paris 2024 with Mitchell" loading="lazy"><img src="img/olympics-2012.jpg" alt="London 2012 with Mitchell" loading="lazy"><img src="img/pageant.jpg" alt="Pageant portrait" loading="lazy"><img src="img/summit-swing.jpg" alt="Snowflake Summit" loading="lazy"></div>`},
-    {txt:'ENFP', nm:'Personality', bg:'#FFE135', fg:'#0B0B0D', body:`<h4>ENFP</h4><div class="stat2 stat4"><div><b>E</b><span>Extravert</span></div><div><b>N</b><span>Intuitive</span></div><div><b>F</b><span>Feeling</span></div><div><b>P</b><span>Perceiving</span></div></div><p>I'm big on ideas and people energy and I usually have a launch plan for everything.</p><p>The plot twist is that I'm also the one who builds the structure when things get ambiguous. I'll bring the sticky notes and then turn them into a plan.</p>`},
-    {k:'book', nm:'Books', bg:'#8B5A2B', fg:'#FFF4DC', live:'books', body:`<h4>On my shelf</h4><p class="muted" id="bkSrc">Pulling from Goodreads…</p><div class="bk-sec">Currently reading</div><div class="bk-row" id="bkNow"></div><div class="bk-sec">All-time favorites</div><div class="bk-grid" id="bkFav"></div><a class="go" href="https://www.goodreads.com/user/show/119872802-veronica" target="_blank" rel="noopener">Follow me on Goodreads</a>`},
+    {k:'pin', icon:'maps', nm:'Maps', bg:'#FFFFFF', fg:'#22E07A', body:`<h4>Where I'm from</h4><div class="pins">${mapSvg}</div><p>I grew up between London, New York and New Jersey. I went to college in Houston and live in Mountain View now.</p>`},
+    {k:'photo', icon:'photos', nm:'Photos', bg:'#FFFFFF', fg:'#E04A3A', body:`<h4>Photos</h4><div class="ph"><img src="img/olympics-2024.jpg" alt="Paris 2024 with Mitchell" loading="lazy"><img src="img/olympics-2012.jpg" alt="London 2012 with Mitchell" loading="lazy"><img src="img/pageant.jpg" alt="Pageant portrait" loading="lazy"><img src="img/summit-swing.jpg" alt="Snowflake Summit" loading="lazy"></div>`},
+    {txt:'ENFP', icon:'enfp', nm:'Personality', bg:'#FFE135', fg:'#0B0B0D', body:`<h4>ENFP</h4><div class="stat2 stat4"><div><b>E</b><span>Extravert</span></div><div><b>N</b><span>Intuitive</span></div><div><b>F</b><span>Feeling</span></div><div><b>P</b><span>Perceiving</span></div></div><p>I'm big on ideas and people energy and I usually have a launch plan for everything.</p><p>The plot twist is that I'm also the one who builds the structure when things get ambiguous. I'll bring the sticky notes and then turn them into a plan.</p>`},
+    {k:'book', icon:'books', nm:'Books', bg:'#8B5A2B', fg:'#FFF4DC', live:'books', body:`<h4>On my shelf</h4><p class="muted" id="bkSrc">Pulling from Goodreads…</p><div class="bk-sec">Currently reading</div><div class="bk-row" id="bkNow"></div><div class="bk-sec">All-time favorites</div><div class="bk-grid" id="bkFav"></div><a class="go" href="https://www.goodreads.com/user/show/119872802-veronica" target="_blank" rel="noopener">Follow me on Goodreads</a>`},
     {txt:'in', nm:'LinkedIn', bg:'#0A66C2', fg:'#FFFFFF', live:'li', body:`<div class="li-head"><img src="img/headshot.jpg" alt=""><div><b>Veronica Saron</b><span>Marketing leader across AI, gaming and consumer tech</span></div></div><a class="li-follow" href="https://www.linkedin.com/in/veron1ca/" target="_blank" rel="noopener">+ Follow</a><div class="bk-sec">Recent posts</div><div class="li-feed" id="liFeed"><p class="muted">Loading posts…</p></div>`},
-    {k:'chat', nm:'Messages', bg:'#22E07A', fg:'#FFFFFF', body:`<div class="bubble">hi!! wait were you on Pokémon GO??</div><div class="bubble me">haha yes. email is easiest</div><div class="bubble me">veronicathemarketer@gmail.com</div><a class="go" href="https://www.linkedin.com/in/veron1ca/" target="_blank" rel="noopener">Or find me on LinkedIn</a>`}
+    {k:'chat', icon:'messages', nm:'Messages', bg:'#22E07A', fg:'#FFFFFF', body:`<div class="bubble">hi!! wait were you on Pokémon GO??</div><div class="bubble me">haha yes. email is easiest</div><div class="bubble me">veronicathemarketer@gmail.com</div><a class="go" href="https://www.linkedin.com/in/veron1ca/" target="_blank" rel="noopener">Or find me on LinkedIn</a>`}
   ];
-  const icon = a => a.img ? `<img src="${a.img}" alt="">` : a.txt ? `<span class="txticon">${a.txt}</span>` : svg(a.k);
+  const icon = a => a.icon ? `<img src="img/icons/${a.icon}.jpg" alt="">` : a.img ? `<img src="${a.img}" alt="">` : a.txt ? `<span class="txticon">${a.txt}</span>` : svg(a.k);
   const appBtn = (a,i) => `<button class="app" type="button" data-i="${i}" aria-label="Open ${a.nm}"><span class="ico" style="background:${a.bg};color:${a.fg||'#fff'}">${icon(a)}</span>${a.nm}</button>`;
   const dockIdx = [0,10,7,11];
   document.getElementById('apps').innerHTML = apps.map((a,i) => dockIdx.includes(i) ? '' : appBtn(a,i)).join('');
