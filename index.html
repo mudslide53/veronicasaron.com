@@ -611,6 +611,19 @@ a.trophy:hover{transform:translateY(-4px);border-color:var(--yellow)}
 .carousel img{flex:none;width:100%;aspect-ratio:1/1;object-fit:cover;scroll-snap-align:start}
 .cdots{flex:none;display:flex;justify-content:center;gap:6px;margin-top:-6px}
 .cdots i{width:6px;height:6px;border-radius:50%;background:#9aa3ad}.cdots i.on{background:#4c566c}
+
+.y07 .sheet.full .sheet-body{padding:0;overflow:hidden}
+.mapapp{position:relative;height:100%;display:flex;flex-direction:column}
+.mapbox{flex:1;background:#e6e1d6;min-height:0}
+.mapbox.nomap{background:repeating-linear-gradient(45deg,#e9e4d8 0 12px,#e1dbcd 12px 24px)}
+.mapbox .leaflet-control-attribution{font-size:8px}
+.redpin i{position:absolute;left:3px;top:0;width:16px;height:16px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#ff9a9a,#d10000 60%,#8a0000);box-shadow:0 1px 2px #0008}
+.redpin i::after{content:"";position:absolute;left:7px;top:15px;width:2px;height:24px;background:linear-gradient(#c8c8c8,#777)}
+.mapcap{position:absolute;left:10px;right:10px;top:10px;z-index:500;background:linear-gradient(#4a4f58ee,#1f2228ee);color:#fff;border:1px solid #ffffff55;border-radius:10px;padding:8px 12px;box-shadow:0 3px 10px #0007;font-size:12.5px;line-height:1.4}
+.mapcap b{display:block;font-size:15px}.mapcap span{color:#dde0e6}
+.maptabs{flex:none;display:grid;grid-template-columns:repeat(5,1fr);background:linear-gradient(#4b4b4b,#2a2a2a 50%,#1c1c1c 51%,#111);border-top:1px solid #000}
+.maptabs button{border:0;background:none;color:#9a9a9a;font:700 10.5px/1 "Helvetica Neue",Helvetica,Arial,sans-serif;padding:12px 2px;cursor:pointer}
+.maptabs button[aria-selected="true"]{color:#fff;background:linear-gradient(#ffffff26,#ffffff0d);box-shadow:inset 0 0 0 1px #ffffff1a}
 </style>
 </head>
 <body>
@@ -1292,7 +1305,6 @@ a.trophy:hover{transform:translateY(-4px);border-color:var(--yellow)}
     book:'<path d="M4 5a2 2 0 0 1 2-2h5v17H6a2 2 0 0 0-2 1z"/><path d="M20 5a2 2 0 0 0-2-2h-5v17h5a2 2 0 0 1 2 1z"/>'
   };
   const svg = k => `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${I[k]}</svg>`;
-  const mapSvg = `<svg viewBox="0 0 300 170" role="img" aria-label="Map pins for London, New York, New Jersey, Houston and Mountain View"><defs><pattern id="g" width="15" height="15" patternUnits="userSpaceOnUse"><path d="M15 0H0V15" fill="none" stroke="#EEEEF1"/></pattern></defs><rect width="300" height="170" fill="url(#g)"/><path d="M258 46 C200 10, 140 30, 120 58 M120 58 L124 66 M124 66 C110 100, 90 112, 82 118 M82 118 C60 110, 40 96, 28 78" fill="none" stroke="#E04A3A" stroke-width="2" stroke-dasharray="4 4"/><g font-family="Onest, sans-serif" font-size="10" font-weight="700" fill="#0B0B0D"><circle cx="258" cy="46" r="6" fill="#FFE135"/><text x="258" y="34" text-anchor="middle">London</text><circle cx="120" cy="58" r="6" fill="#FFE135"/><text x="104" y="52" text-anchor="end">New York</text><circle cx="124" cy="66" r="5" fill="#FFE135"/><text x="134" y="80">New Jersey</text><circle cx="82" cy="118" r="6" fill="#FFE135"/><text x="82" y="138" text-anchor="middle">Houston (Rice)</text><circle cx="28" cy="78" r="9" fill="#FF6F5E" opacity=".3"/><circle cx="28" cy="78" r="6" fill="#FF6F5E"/><text x="28" y="98" text-anchor="middle">Mountain View</text></g></svg>`;
   const apps = [
     {k:'milk', icon:'human-milk-ops', nm:'Human Milk Ops', bg:'#FFE1DB', fg:'#E04A3A', body:`<h4>Human Milk Operations</h4>
       <div class="gtable"><div class="gt-h">What is it?</div><div class="gt-r"><span>It's the "company" I listed on LinkedIn for the 14 months I fed my daughter. Feeding a baby is a full-time job with no PTO, so I gave it a job title.</span></div></div>
@@ -1338,7 +1350,7 @@ a.trophy:hover{transform:translateY(-4px);border-color:var(--yellow)}
       <div class="stat2"><div><b>2014</b><span>Economics cum laude and a merit scholarship</span></div><div><b>Will Rice</b><span>my college and where we met</span></div></div>
       <p>I also founded OwlSpark, Rice's startup accelerator. As of 2025, 229 Rice founders have gone through it and their companies have raised $116M. And I won the Google Global Challenge in 2012.</p>
       <p class="muted">I like the line "you can only connect the dots looking back." Rice turned out to be one of the biggest dots in my life.</p>`},
-    {k:'pin', icon:'maps', nm:'Maps', bg:'#FFFFFF', fg:'#22E07A', body:`<h4>Where I'm from</h4><div class="pins">${mapSvg}</div><p>I grew up between London, New York and New Jersey. I went to college in Houston and live in Mountain View now.</p>`},
+    {k:'pin', icon:'maps', nm:'Maps', bg:'#FFFFFF', fg:'#22E07A', live:'map', full:true, body:`<div class="mapapp"><div class="mapbox" id="mapBox" role="img" aria-label="Map of the places I've lived"></div><div class="mapcap" id="mapCap"></div><div class="maptabs" id="mapTabs" role="tablist"></div></div>`},
     {k:'photo', icon:'photos', nm:'Photos', bg:'#FFFFFF', fg:'#E04A3A', body:`<h4>Photos</h4><div class="ph"><img src="img/olympics-2024.jpg" alt="Paris 2024 with Mitchell" loading="lazy"><img src="img/olympics-2012.jpg" alt="London 2012 with Mitchell" loading="lazy"><img src="img/pageant.jpg" alt="Pageant portrait" loading="lazy"><img src="img/summit-swing.jpg" alt="Snowflake Summit" loading="lazy"></div>`},
     {txt:'ENFP', icon:'enfp', nm:'Personality', bg:'#FFE135', fg:'#0B0B0D', body:`<h4>ENFP</h4><div class="stat2 stat4"><div><b>E</b><span>Extravert</span></div><div><b>N</b><span>Intuitive</span></div><div><b>F</b><span>Feeling</span></div><div><b>P</b><span>Perceiving</span></div></div><p>I'm big on ideas and people energy and I usually have a launch plan for everything.</p><p>The plot twist is that I'm also the one who builds the structure when things get ambiguous. I'll bring the sticky notes and then turn them into a plan.</p>`},
     {k:'book', icon:'books', nm:'Books', bg:'#8B5A2B', fg:'#FFF4DC', live:'books', body:`<h4>On my shelf</h4><p class="muted" id="bkSrc">Pulling from Goodreads…</p><div class="bk-sec">Currently reading</div><div class="bk-row" id="bkNow"></div><div class="bk-sec">All-time favorites</div><div class="bk-grid" id="bkFav"></div><a class="go" href="https://www.goodreads.com/user/show/119872802-veronica" target="_blank" rel="noopener">Follow me on Goodreads</a>`},
@@ -1359,6 +1371,8 @@ a.trophy:hover{transform:translateY(-4px);border-color:var(--yellow)}
     const body = document.getElementById('sheetBody'); body.innerHTML = a.body; body.scrollTop = 0;
     sheet.classList.add('on');
     requestAnimationFrame(updateHint);
+    sheet.classList.toggle('full', !!a.full);
+    if(a.live === 'map') loadMap();
     if(a.live === 'books') loadBooks();
     if(a.live === 'li') loadLinkedIn();
   });
@@ -1368,6 +1382,45 @@ a.trophy:hover{transform:translateY(-4px);border-color:var(--yellow)}
   sBody.addEventListener('scroll', updateHint, {passive:true});
   hint.addEventListener('click', () => sBody.scrollBy({top: sBody.clientHeight * .7, behavior: reduce ? 'auto' : 'smooth'}));
   sBody.addEventListener('load', updateHint, true);
+  const PLACES = [
+    {k:'London', nm:'London', ll:[51.5072,-0.1276], z:10, cap:"Part of where I grew up. I came back as a fan for the 2012 Olympics with my brother, back when making the team was still his dream."},
+    {k:'NY', nm:'New York', ll:[40.7128,-74.006], z:10, cap:"Part of where I grew up. I came back years later and split my fractional years between here and the Bay Area."},
+    {k:'NJ', nm:'New Jersey', ll:[40.0583,-74.4057], z:8, cap:"Part of where I grew up, in between London and New York."},
+    {k:'Houston', nm:'Houston', ll:[29.7174,-95.4018], z:11, cap:"Rice University and Will Rice College, where I met my husband. I stayed after graduation to work at Deloitte."},
+    {k:'Bay Area', nm:'Mountain View', ll:[37.3861,-122.0839], z:10, cap:"Home now. Niantic, Neeva and RelationalAI all happened around here."}
+  ];
+  let map, pin;
+  function loadLeaflet(){
+    if(window.L) return Promise.resolve();
+    return new Promise((ok, no) => {
+      const c = document.createElement('link'); c.rel = 'stylesheet'; c.href = 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css'; document.head.appendChild(c);
+      const sc = document.createElement('script'); sc.src = 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js'; sc.onload = ok; sc.onerror = no; document.head.appendChild(sc);
+    });
+  }
+  function showPlace(i){
+    const p = PLACES[i];
+    document.querySelectorAll('#mapTabs button').forEach((b,k) => b.setAttribute('aria-selected', k === i));
+    document.getElementById('mapCap').innerHTML = `<b>${p.nm}</b><span>${p.cap}</span>`;
+    if(!map) return;
+    map.flyTo(p.ll, p.z, {duration: reduce ? 0 : 1.1});
+    pin.setLatLng(p.ll);
+  }
+  async function loadMap(){
+    if(map){ try{ map.remove(); }catch(e){} map = null; }
+    const tabs = document.getElementById('mapTabs'); if(!tabs) return;
+    tabs.innerHTML = PLACES.map((p,i) => `<button type="button" role="tab" data-i="${i}">${p.k}</button>`).join('');
+    tabs.onclick = e => { const b = e.target.closest('button'); if(b) showPlace(+b.dataset.i); };
+    const start = PLACES.length - 1;
+    showPlace(start);
+    try {
+      await loadLeaflet();
+      map = L.map('mapBox', {zoomControl:false, attributionControl:true}).setView(PLACES[start].ll, PLACES[start].z);
+      L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {maxZoom:18, attribution:'&copy; <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a>'}).addTo(map);
+      pin = L.marker(PLACES[start].ll, {icon: L.divIcon({className:'redpin', html:'<i></i>', iconSize:[22,40], iconAnchor:[11,40]})}).addTo(map);
+      setTimeout(() => map.invalidateSize(), 300);
+    } catch(e){ document.getElementById('mapBox').classList.add('nomap'); }
+  }
+  document.getElementById('sheetClose').addEventListener('click', () => { if(map){ map.remove(); map = null; } });
   const BK_FALLBACK = {favorites:[{"title": "Influence", "author": "Robert B. Cialdini", "url": "https://www.goodreads.com/book/show/28815.Influence", "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1391026083l/28815._SY300_.jpg"}, {"title": "The 22 Immutable Laws of Marketing", "author": "Al Ries", "url": "https://www.goodreads.com/book/show/6646695-the-22-immutable-laws-of-marketing", "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1328335450l/6646695._SY300_.jpg"}, {"title": "The Devil Wears Prada", "author": "Lauren Weisberger", "url": "https://www.goodreads.com/book/show/5139.The_Devil_Wears_Prada", "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1388179604l/5139._SY300_.jpg"}, {"title": "Stories of Your Life and Others", "author": "Ted Chiang", "url": "https://www.goodreads.com/book/show/223380.Stories_of_Your_Life_and_Others", "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1356138316l/223380._SY300_.jpg"}, {"title": "The 48 Laws of Power", "author": "Robert Greene", "url": "https://www.goodreads.com/book/show/1303.The_48_Laws_of_Power", "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1694722764l/1303._SY300_.jpg"}, {"title": "The Bell Jar", "author": "Sylvia Plath", "url": "https://www.goodreads.com/book/show/25851562-the-bell-jar", "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1576419547l/25851562._SY300_.jpg"}, {"title": "One Hundred Years of Solitude", "author": "Gabriel García Márquez", "url": "https://www.goodreads.com/book/show/320.One_Hundred_Years_of_Solitude", "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1327881361l/320._SY300_.jpg"}, {"title": "The Help", "author": "Kathryn Stockett", "url": "https://www.goodreads.com/book/show/4667024-the-help", "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1622355533l/4667024._SY300_.jpg"}, {"title": "The Night Circus", "author": "Erin Morgenstern", "url": "https://www.goodreads.com/book/show/11506091-the-night-circus", "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1327894371l/11506091._SY300_.jpg"}, {"title": "Daring Greatly", "author": "Brené Brown", "url": "https://www.goodreads.com/book/show/13588356-daring-greatly", "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1337110319l/13588356._SY300_.jpg"}, {"title": "Mastery", "author": "Robert Greene", "url": "https://www.goodreads.com/book/show/13589182-mastery", "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1348274726l/13589182._SY300_.jpg"}], reading:[{"title": "Buddenbrooks", "author": "Thomas Mann", "url": "https://www.goodreads.com/book/show/243666842-buddenbrooks", "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1762502231l/243666842._SY300_.jpg"}, {"title": "Wanting", "author": "Luke Burgis", "url": "https://www.goodreads.com/book/show/56082939-wanting", "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1606653992l/56082939._SY300_.jpg"}, {"title": "The Inner Game of Tennis", "author": "W. Timothy Gallwey", "url": "https://www.goodreads.com/book/show/18875853-the-inner-game-of-tennis", "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1385014849l/18875853._SY300_.jpg"}, {"title": "Carrie Soto Is Back", "author": "Taylor Jenkins Reid", "url": "https://www.goodreads.com/book/show/60437824-carrie-soto-is-back", "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1649870818l/60437824._SY300_.jpg"}]};
   const bookTile = b => `<a class="bk" href="${b.url}" target="_blank" rel="noopener" title="${b.title} by ${b.author}"><img src="${b.cover}" alt="${b.title} by ${b.author}" loading="lazy"></a>`;
   async function loadBooks(){
