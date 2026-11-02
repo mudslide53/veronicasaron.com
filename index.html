@@ -605,6 +605,12 @@ a.trophy:hover{transform:translateY(-4px);border-color:var(--yellow)}
 @keyframes hintBob{50%{transform:translateY(3px)}}
 .np-art{width:136px;height:136px}
 .np-meta{margin-top:18px}
+
+.carousel{flex:none;display:flex;overflow-x:auto;scroll-snap-type:x mandatory;border-radius:9px;border:1px solid #a9b1bb;background:#fff;scrollbar-width:none}
+.carousel::-webkit-scrollbar{display:none}
+.carousel img{flex:none;width:100%;aspect-ratio:1/1;object-fit:cover;scroll-snap-align:start}
+.cdots{flex:none;display:flex;justify-content:center;gap:6px;margin-top:-6px}
+.cdots i{width:6px;height:6px;border-radius:50%;background:#9aa3ad}.cdots i.on{background:#4c566c}
 </style>
 </head>
 <body>
@@ -1311,7 +1317,8 @@ a.trophy:hover{transform:translateY(-4px);border-color:var(--yellow)}
       <div class="gtable"><div class="gt-h">My platform</div><div class="gt-r"><b>Empowering with AI</b><span>I help nonprofits, changemakers and moms groups use AI to buy back their time. Open the Volunteer app for the details.</span></div></div>
       <p class="muted">Bonus: the walk turned out to be harder than any launch I've run.</p>`},
 
-    {k:'hand', icon:'volunteer', nm:'Volunteer', bg:'#FFFFFF', fg:'#E04A3A', body:`<h4>Giving back</h4>
+    {k:'hand', icon:'volunteer', nm:'Volunteer', bg:'#FFFFFF', fg:'#E04A3A', body:`<div class="carousel" aria-label="Empowering with AI graphics"><img src="img/ewai-1.jpg" alt="We teach changemakers to buy back their time with AI. Hands-on AI workshops for nonprofits, women's groups and impact organizations." loading="lazy"><img src="img/ewai-2.jpg" alt="200+ changemakers trained and 10+ impact organizations, from arts nonprofits to Olympic sports organizations." loading="lazy"><img src="img/ewai-3.jpg" alt="Bring a workshop to your organization." loading="lazy"></div><div class="cdots" aria-hidden="true"><i class="on"></i><i></i><i></i></div>
+      <h4>Giving back</h4>
       <div class="gtable"><div class="gt-h">Empowering with AI · my USOA platform</div>
         <div class="gt-r"><span>I help local nonprofits, changemaker groups and moms groups use AI to buy back their time and save money. Mostly that means grant writing, simple workflows and the admin that eats a whole weekend. No robot talk required.</span></div>
         <div class="gt-r"><b>A favorite story</b><span>An 80-year-old woman in Houston runs an arts nonprofit and was spending her weekends writing grants. I showed her how to do it in a couple of hours. She has brought in tens of thousands in grant money since.</span></div>
@@ -1355,6 +1362,7 @@ a.trophy:hover{transform:translateY(-4px);border-color:var(--yellow)}
     if(a.live === 'books') loadBooks();
     if(a.live === 'li') loadLinkedIn();
   });
+  document.addEventListener('scroll', e => { const c = e.target; if(!c.classList || !c.classList.contains('carousel')) return; const i = Math.round(c.scrollLeft / c.clientWidth); c.nextElementSibling.querySelectorAll('i').forEach((d,k) => d.classList.toggle('on', k === i)); }, true);
   const sBody = document.getElementById('sheetBody'), hint = document.getElementById('moreHint');
   function updateHint(){ hint.classList.toggle('show', sBody.scrollHeight - sBody.clientHeight > 24 && sBody.scrollTop < 30); }
   sBody.addEventListener('scroll', updateHint, {passive:true});
