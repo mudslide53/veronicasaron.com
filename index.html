@@ -597,6 +597,14 @@ a.trophy:hover{transform:translateY(-4px);border-color:var(--yellow)}
 .sash{position:absolute;left:-40px;bottom:46px;transform:rotate(-24deg);background:linear-gradient(#fff6dd,#e8cf8a);color:#5a3d00;font-family:var(--f-glam);font-style:italic;font-size:15px;padding:5px 60px;box-shadow:0 3px 8px #0006;white-space:nowrap}
 .y07 .stat2 div{background:#fff}
 .y07 .sheet-body > *{flex-shrink:0}
+
+.y07 .sheet{position:absolute}
+.more-hint{position:absolute;left:0;right:0;bottom:0;z-index:3;border:0;padding:28px 0 10px;background:linear-gradient(transparent,#00000099 70%);color:#fff;font:700 12px/1 "Helvetica Neue",Helvetica,Arial,sans-serif;text-shadow:0 1px 2px #000;cursor:pointer;opacity:0;pointer-events:none;transition:opacity .25s}
+.more-hint.show{opacity:1;pointer-events:auto}
+.more-hint span{display:inline-block;animation:hintBob 1.2s ease-in-out infinite}
+@keyframes hintBob{50%{transform:translateY(3px)}}
+.np-art{width:136px;height:136px}
+.np-meta{margin-top:18px}
 </style>
 </head>
 <body>
@@ -926,7 +934,7 @@ a.trophy:hover{transform:translateY(-4px);border-color:var(--yellow)}
         </div>
         <div class="sheet" id="sheet" role="dialog" aria-modal="false" aria-labelledby="sheetTitle">
           <div class="sheet-head"><button class="back" type="button" id="sheetClose">Home</button><h3 id="sheetTitle">App</h3><span class="ico" id="sheetIco"></span></div>
-          <div class="sheet-body" id="sheetBody"></div>
+          <div class="sheet-body" id="sheetBody"></div><button class="more-hint" id="moreHint" type="button" aria-label="Scroll for more">Scroll for more <span aria-hidden="true">▾</span></button>
         </div>
       </div>
       <button class="homebtn" type="button" id="homeBtn" aria-label="Home button"><i></i></button>
@@ -1343,9 +1351,15 @@ a.trophy:hover{transform:translateY(-4px);border-color:var(--yellow)}
     document.getElementById('sheetTitle').textContent = a.nm;
     const body = document.getElementById('sheetBody'); body.innerHTML = a.body; body.scrollTop = 0;
     sheet.classList.add('on');
+    requestAnimationFrame(updateHint);
     if(a.live === 'books') loadBooks();
     if(a.live === 'li') loadLinkedIn();
   });
+  const sBody = document.getElementById('sheetBody'), hint = document.getElementById('moreHint');
+  function updateHint(){ hint.classList.toggle('show', sBody.scrollHeight - sBody.clientHeight > 24 && sBody.scrollTop < 30); }
+  sBody.addEventListener('scroll', updateHint, {passive:true});
+  hint.addEventListener('click', () => sBody.scrollBy({top: sBody.clientHeight * .7, behavior: reduce ? 'auto' : 'smooth'}));
+  sBody.addEventListener('load', updateHint, true);
   const BK_FALLBACK = {favorites:[{"title": "Influence", "author": "Robert B. Cialdini", "url": "https://www.goodreads.com/book/show/28815.Influence", "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1391026083l/28815._SY300_.jpg"}, {"title": "The 22 Immutable Laws of Marketing", "author": "Al Ries", "url": "https://www.goodreads.com/book/show/6646695-the-22-immutable-laws-of-marketing", "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1328335450l/6646695._SY300_.jpg"}, {"title": "The Devil Wears Prada", "author": "Lauren Weisberger", "url": "https://www.goodreads.com/book/show/5139.The_Devil_Wears_Prada", "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1388179604l/5139._SY300_.jpg"}, {"title": "Stories of Your Life and Others", "author": "Ted Chiang", "url": "https://www.goodreads.com/book/show/223380.Stories_of_Your_Life_and_Others", "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1356138316l/223380._SY300_.jpg"}, {"title": "The 48 Laws of Power", "author": "Robert Greene", "url": "https://www.goodreads.com/book/show/1303.The_48_Laws_of_Power", "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1694722764l/1303._SY300_.jpg"}, {"title": "The Bell Jar", "author": "Sylvia Plath", "url": "https://www.goodreads.com/book/show/25851562-the-bell-jar", "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1576419547l/25851562._SY300_.jpg"}, {"title": "One Hundred Years of Solitude", "author": "Gabriel García Márquez", "url": "https://www.goodreads.com/book/show/320.One_Hundred_Years_of_Solitude", "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1327881361l/320._SY300_.jpg"}, {"title": "The Help", "author": "Kathryn Stockett", "url": "https://www.goodreads.com/book/show/4667024-the-help", "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1622355533l/4667024._SY300_.jpg"}, {"title": "The Night Circus", "author": "Erin Morgenstern", "url": "https://www.goodreads.com/book/show/11506091-the-night-circus", "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1327894371l/11506091._SY300_.jpg"}, {"title": "Daring Greatly", "author": "Brené Brown", "url": "https://www.goodreads.com/book/show/13588356-daring-greatly", "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1337110319l/13588356._SY300_.jpg"}, {"title": "Mastery", "author": "Robert Greene", "url": "https://www.goodreads.com/book/show/13589182-mastery", "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1348274726l/13589182._SY300_.jpg"}], reading:[{"title": "Buddenbrooks", "author": "Thomas Mann", "url": "https://www.goodreads.com/book/show/243666842-buddenbrooks", "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1762502231l/243666842._SY300_.jpg"}, {"title": "Wanting", "author": "Luke Burgis", "url": "https://www.goodreads.com/book/show/56082939-wanting", "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1606653992l/56082939._SY300_.jpg"}, {"title": "The Inner Game of Tennis", "author": "W. Timothy Gallwey", "url": "https://www.goodreads.com/book/show/18875853-the-inner-game-of-tennis", "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1385014849l/18875853._SY300_.jpg"}, {"title": "Carrie Soto Is Back", "author": "Taylor Jenkins Reid", "url": "https://www.goodreads.com/book/show/60437824-carrie-soto-is-back", "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1649870818l/60437824._SY300_.jpg"}]};
   const bookTile = b => `<a class="bk" href="${b.url}" target="_blank" rel="noopener" title="${b.title} by ${b.author}"><img src="${b.cover}" alt="${b.title} by ${b.author}" loading="lazy"></a>`;
   async function loadBooks(){
