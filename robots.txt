@@ -1,4 +1,6 @@
 User-agent: *
 Allow: /
+Disallow: /cdn-cgi/
+Disallow: /api/
 
 Sitemap: https://veronicasaron.com/sitemap.xml
